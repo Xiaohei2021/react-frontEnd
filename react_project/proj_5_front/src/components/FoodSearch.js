@@ -11,8 +11,8 @@ handleQuery = (e) =>{
 }
 
 handleSubmit = (e) => {
-  e.preventDefault();
-  
+  // e.preventDefault();
+
 }
 
 
@@ -20,14 +20,14 @@ handleSubmit = (e) => {
     return (
       <div>
         <h4>Which dish do you have in mind today?</h4>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={this.handleSubmit}>
           <input 
             type="text" 
             placeholder="Enter the name of the dish"
             value = {this.state.query}
             onChange={this.handleQuery}   
           />
-          <input type="submit"/>
+          <input type="submit" />
         </form>
 
       </div>

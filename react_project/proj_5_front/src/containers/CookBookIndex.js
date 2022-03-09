@@ -1,7 +1,21 @@
-import React from 'react'
+// import { Link, Route, Routes } from 'react-router-dom';
+import React, { Component } from 'react'
+import FoodSearch from '../components/FoodSearch'
 
-export default function CookBookIndex() {
-  return (
-    <div>CookBookIndex</div>
-  )
+
+export default class CookBookIndex extends Component {
+  render() {
+    return (
+      <div>
+{/* 
+      <Link to="/">Home</Link>
+      <Link to="favorite">Favorites</Link>
+      <Routes>
+        <Route path="/favorite" element={<FavoriteList/>} /> 
+      </Routes>  */}
+
+        <FoodSearch />
+      </div>
+    )
+  }
 }
