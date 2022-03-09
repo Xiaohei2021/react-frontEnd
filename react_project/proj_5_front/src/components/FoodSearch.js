@@ -6,9 +6,23 @@ state={
     query: ""
 }
 
+
+
   render() {
     return (
-      <div>FoodSearch</div>
+      <div>
+        <h4>Which dish do you have in mind today?</h4>
+        <form onSubmit={handleSubmit}>
+          <input 
+            type="text" 
+            placeholder="Enter the name of the dish"
+            value = {this.state.query}
+            onChange={this.handleQuery}   
+          />
+          <input type="submit"/>
+        </form>
+
+      </div>
     )
   }
 }
