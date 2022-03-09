@@ -2,16 +2,17 @@
 import React, { Component } from 'react'
 import FoodSearch from '../components/FoodSearch'
 import FoodList from '../components/FoodList'
+import { connect } from 'react-redux'
 
 
-export default class CookBookIndex extends Component {
+class CookBookIndex extends Component {
 
   state = {
     searchData :[]
   }
 
   handleSurprise = (e) => {
-    
+
   }
 
   fetchDishes = (query) => {
@@ -45,3 +46,13 @@ export default class CookBookIndex extends Component {
     )
   }
 }
+
+
+function mapDispatchToProps(dispatch) {
+  return {
+    getRecipes: () => dispatch()
+  }
+
+}
+// export default connect(mapStateToProps, mapDispatchToProps)(CookBookIndex)
+export default connect(null, mapDispatchToProps)(CookBookIndex)

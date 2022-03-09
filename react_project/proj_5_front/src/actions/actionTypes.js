@@ -1,0 +1,1 @@
+export const GET_RANDOM_RECIPES = "GET_RANDOM_RECIPES"
