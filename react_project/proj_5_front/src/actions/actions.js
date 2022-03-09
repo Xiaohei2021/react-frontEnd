@@ -1,5 +1,13 @@
 import { GET_RANDOM_RECIPES } from "./actionTypes"
 
+
+const addSurprise = (surprise) =>{
+    return{
+        type: GET_RANDOM_RECIPES,
+        surprise
+    }
+}
+
 export const fetchSurprise = () => {
     return (dispatch) => {
         fetch("https://themealdb.p.rapidapi.com/randomselection.php", {
@@ -10,7 +18,7 @@ export const fetchSurprise = () => {
           }
       })
         .then(r => r.json())
-        .then(surprise => dispatch({type: "GET_RANDOM_RECIPES", surprise}))
+        .then(surprise => dispatch(addSurprise(surprise)))
         // .then(surprise => console.log(surprise))
     //    debugger
 
@@ -24,7 +32,7 @@ export const fetchSurprise = () => {
 //         "x-rapidapi-host": "themealdb.p.rapidapi.com",
 //         "x-rapidapi-key": "da4f016a88msh0f102f0fca24bfcp1fd784jsn2faf65ebf551"}
 //     })
-//     .then(response => response.json())
+//     .then(r => r.json())
 //     .then(data => this.setState( {searchData:data} ))
 //     .catch(err => {
 //     console.error(err);

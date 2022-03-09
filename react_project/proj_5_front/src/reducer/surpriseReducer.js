@@ -7,7 +7,7 @@ export default function surpriseReduer (state = {randomRecipes: []}, action)
   switch (action.type) {
 
   case GET_RANDOM_RECIPES:
-    return {...state, randomRecipes: action.surprise}
+    return {...state, randomRecipes: action.surprise.meals}
 
   default:
     return state
