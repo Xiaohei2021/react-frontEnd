@@ -6,6 +6,14 @@ state={
     query: ""
 }
 
+handleQuery = (e) =>{
+  this.setState({query: e.target.value})
+}
+
+handleSubmit = (e) => {
+  e.preventDefault();
+  
+}
 
 
   render() {
