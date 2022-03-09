@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-export default function foodList() {
-  
+export default class FoodList extends Component {
+  render() {
 
-  return (
-    <h1>All Food</h1>
-
-    
-  )
+      const randomRecipes = this.props.surprises.meals.map((recipe) => (<li key={recipe.idMeal}>{recipe.strMeal}</li>))
+    return (
+      <div>
+        FoodList
+        {randomRecipes}  
+      </div>
+      
+    )
+  }
 }
+

@@ -1,5 +1,5 @@
 import { applyMiddleware, createStore } from "redux";
 import thunk from "redux-thunk";
-import reducer from "./reducer/reducer";
+import surpriseReduer from "./reducer/surpriseReducer";
 
-export default createStore(reducer, applyMiddleware(thunk))
+export default createStore(surpriseReduer, applyMiddleware(thunk))
