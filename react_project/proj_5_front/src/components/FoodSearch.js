@@ -11,7 +11,8 @@ handleQuery = (e) =>{
 }
 
 handleSubmit = (e) => {
-  // e.preventDefault();
+  e.preventDefault();
+  this.props.fetchDishes(this.state.query)
 
 }
 
@@ -19,7 +20,7 @@ handleSubmit = (e) => {
   render() {
     return (
       <div>
-        <h4>Which dish do you have in mind today?</h4>
+       
         <form onSubmit={this.handleSubmit}>
           <input 
             type="text" 
