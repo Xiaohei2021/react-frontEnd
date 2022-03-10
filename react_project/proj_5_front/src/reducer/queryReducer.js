@@ -1,5 +1,7 @@
 // const initialState = {}
 
+import { GET_QUERIED_RECIPE } from "../actions/actionTypes"
+
 export default function queryReducer (state = {queryResult: []}, action){
   switch (action.type) {
 

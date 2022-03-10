@@ -1,7 +1,7 @@
 // import { Link, Route, Routes } from 'react-router-dom';
 import React, { Component } from 'react'
 import FoodSearch from '../components/FoodSearch'
-import FoodList from '../components/FoodList'
+// import FoodList from '../components/FoodList'
 import { connect } from 'react-redux'
 import {fetchRecipe, fetchSurprise } from '../actions/actions'
 // import FavoriteList from '../components/FavoriteList'
@@ -10,39 +10,34 @@ import {fetchRecipe, fetchSurprise } from '../actions/actions'
 class CookBookIndex extends Component {
 
 
-  state={
-    queriedDish: []
-}
+//   state={
+//     queriedDish: []
+// }
 
   handleSurprise() {
     this.props.fetchSurprise();
   }
 
-  handleQuery() {
-    this.props.fetchRecipe();
+  handleQuery(query) {
+    this.props.fetchRecipe(query);
   }
 
   render() {
     // console.log(this.props.recipes)
-    console.log(this.props.targetRecipe)
+    console.log(this.props)
 
     // debugger
     return (
       <div>
         <h4>What do you have in mind today?</h4>
         <button onClick={(e)=> this.handleSurprise(e)}>Surprise Me!</button>
-        
           {/* <Link to="/">Home</Link>
           <Link to="favorite">Favorites</Link>
-
           <Routes>
             <Route path="/favorite" element={<FavoriteList/>} /> 
           </Routes>  */}
         <FoodSearch fetchRecipe={this.handleQuery} />
-        <FoodList surprises={this.props.recipes}/>
-        <ul>
-          {/* {surprises} */}
-        </ul>
+        {/* <FoodList surprises={this.props.recipes}/> */}
       </div>
     )
   }
@@ -50,14 +45,14 @@ class CookBookIndex extends Component {
 
   function mapDispatchToProps(dispatch) {
     return {
-      fetchSurprise: () => dispatch(fetchSurprise()),
-      fetchRecipe: () => dispatch(fetchRecipe())
+      // fetchSurprise: () => dispatch(fetchSurprise()),
+      fetchRecipe: (query) => dispatch(fetchRecipe(query))
     }
   }
 
   function mapStateToProps(state){
     return{
-      recipes: state.randomRecipes,
+      // recipes: state.randomRecipes,
       targetRecipe: state.queryResult
     }
   }
