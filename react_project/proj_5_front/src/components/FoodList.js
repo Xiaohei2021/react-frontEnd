@@ -12,7 +12,7 @@ export default class FoodList extends Component {
 
       const randomdishes =this.props.surprises.map(recipe => {
         return (
-          <Dish key={recipe.idMeal} dish={recipe} />
+          <Dish key={recipe.idMeal} dish={recipe} link />
         )})
 
     return (

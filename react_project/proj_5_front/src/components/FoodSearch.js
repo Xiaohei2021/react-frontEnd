@@ -12,7 +12,7 @@ handleQuery = (e) =>{
 
 handleSubmit = (e) => {
   e.preventDefault();
-  this.props.fetchDishes(this.state.query)
+  this.props.fetchRecipe(this.state.query)
 
 }
 
