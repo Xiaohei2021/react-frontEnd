@@ -1,7 +1,9 @@
 import { applyMiddleware, createStore } from "redux";
 import thunk from "redux-thunk";
 // import surpriseReduer from "./reducer/surpriseReducer";
-// import queryReducer from "./reducer/queryReducer"
+import queryReducer from "./reducer/queryReducer"
 import omniReducer from "./reducer/omniReducer"
 
 export default createStore(omniReducer, applyMiddleware(thunk))
+// export default createStore(surpriseReduer, applyMiddleware(thunk))
+// export default createStore(queryReducer, applyMiddleware(thunk))

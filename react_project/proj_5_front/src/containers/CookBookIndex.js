@@ -1,7 +1,7 @@
 // import { Link, Route, Routes } from 'react-router-dom';
 import React, { Component } from 'react'
 import FoodSearch from '../components/FoodSearch'
-// import FoodList from '../components/FoodList'
+import FoodList from '../components/FoodList'
 import { connect } from 'react-redux'
 import {fetchRecipe, fetchSurprise } from '../actions/actions'
 // import FavoriteList from '../components/FavoriteList'
@@ -18,7 +18,7 @@ class CookBookIndex extends Component {
     this.props.fetchSurprise();
   }
 
-  handleQuery(query) {
+  handleQuery=(query)=>{
     this.props.fetchRecipe(query);
   }
 
@@ -37,7 +37,7 @@ class CookBookIndex extends Component {
             <Route path="/favorite" element={<FavoriteList/>} /> 
           </Routes>  */}
         <FoodSearch fetchRecipe={this.handleQuery} />
-        {/* <FoodList surprises={this.props.recipes}/> */}
+        <FoodList surprises={this.props.recipes}/>
       </div>
     )
   }
@@ -45,15 +45,17 @@ class CookBookIndex extends Component {
 
   function mapDispatchToProps(dispatch) {
     return {
-      // fetchSurprise: () => dispatch(fetchSurprise()),
+      fetchSurprise: () => dispatch(fetchSurprise()),
       fetchRecipe: (query) => dispatch(fetchRecipe(query))
     }
   }
 
   function mapStateToProps(state){
+    // console.log(state)
     return{
-      // recipes: state.randomRecipes,
-      targetRecipe: state.queryResult
+      
+      recipes: state.surprise.randomRecipes,
+      targetRecipe: state.query.queryResult
     }
   }
 export default connect(mapStateToProps, mapDispatchToProps)(CookBookIndex)

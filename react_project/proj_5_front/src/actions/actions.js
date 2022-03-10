@@ -44,9 +44,10 @@ export const fetchSurprise = () => {
         })
     .then(r => r.json())
     .then(result => dispatch(getResult(result) ))
-    .catch(err => {
-    console.error(err);
-    });
+    // .then(surprise => console.log(surprise))
+    // .catch(err => {
+    // console.error(err);
+    // });
   }
 }
   
