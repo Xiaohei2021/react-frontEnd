@@ -1,4 +1,4 @@
-import { GET_RANDOM_RECIPES } from "./actionTypes"
+import { CREATE_RECIPE, GET_RANDOM_RECIPES } from "./actionTypes"
 import { GET_QUERIED_RECIPE } from "./actionTypes"
 
 
@@ -16,6 +16,13 @@ const getResult = (result) => {
         result
     }
 }
+
+const createRecipe = () => {
+    return{
+        type: CREATE_RECIPE, newRecipe
+    }
+}
+
 
 export const fetchSurprise = () => {
     return (dispatch) => {
@@ -50,4 +57,15 @@ export const fetchSurprise = () => {
     // });
   }
 }
-  
+
+export const createOwnRecipe = (formInput) =>{
+    return dispatch => {
+        fetch("http://localhost:3000", {
+            "method": "POST",
+            "headers": {
+                'Content-Type': "application/json",
+                'Accept': "application/json"
+            }
+        }})
+    }
+}

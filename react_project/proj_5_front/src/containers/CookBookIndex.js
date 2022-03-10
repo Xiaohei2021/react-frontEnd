@@ -37,7 +37,7 @@ class CookBookIndex extends Component {
             <Route path="/favorite" element={<FavoriteList/>} /> 
           </Routes>  */}
         <FoodSearch fetchRecipe={this.handleQuery} />
-        <FoodList surprises={this.props.recipes}/>
+        <FoodList surprises={this.props.recipes} queryResult={this.props.targetRecipe}/>
       </div>
     )
   }

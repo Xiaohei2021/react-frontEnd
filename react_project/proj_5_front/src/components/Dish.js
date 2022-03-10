@@ -7,7 +7,7 @@ export default function Dish(props) {
         Dish
         {props.dish.strMeal}
         {/* {props.dish.strInstructions} */}
-        {/* <img src={props.dish.strMealThumb}/> */}
+        <img src={props.dish.strMealThumb}/>
         {/* {props.dish.strIngredient1} */}
     </div>
   )

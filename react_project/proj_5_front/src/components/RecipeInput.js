@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class RecipeInput extends Component {
 
     state={
-        recipeName:"",
+        // recipeName:"",
         recipeIngredient: "",
         recipeInstruction: ""
     }
@@ -12,10 +12,9 @@ export default class RecipeInput extends Component {
       <div>
           RecipeInput
         <form>
-            <input/>
-            <input/>
-
-
+            <input type="text" placeholder='Enter the recipe ingredient'/>
+            <input type="text" placeholder='Enter the recipe instructions'/>
+            <input type="submit"/>
         </form>
           
     </div>
