@@ -65,7 +65,15 @@ export const createOwnRecipe = (formInput) =>{
             "headers": {
                 'Content-Type': "application/json",
                 'Accept': "application/json"
+            },
+            body: JSON.stringify(formInput)
+        })
+        .then(r=>{
+            if(r.ok){
+                r.json().then(newRecipe => dispatch(createRecipe(newRecipe)))
+            }else{
+                r.json().then(err => console.error(err))
             }
-        }})
+        })
     }
 }
