@@ -3,7 +3,7 @@ import FoodSearch from '../components/FoodSearch'
 import FoodList from '../components/FoodList'
 import { connect } from 'react-redux'
 import {fetchRecipe, fetchSurprise, fetchSavedRecipe } from '../actions/actions'
-import RecipeInput from '../components/RecipeInput'
+import RecipeStorage from '../components/RecipeStorage'
 
 class CookBookIndex extends Component {
 
@@ -22,20 +22,22 @@ class CookBookIndex extends Component {
   render() {
     // console.log(this.props.recipes)
     // console.log(this.props)
-    const backEnd = () => this.props.savedRecipe.map(r => <li key={r.id}>{r.name}</li>)
+    // const backEnd = () => this.props.savedRecipe.map(r => <li key={r.id}>{r.name}</li>)
+
     // debugger
     return (
       <div>
-        {/* <h4>What do you have in mind today?</h4>
-        <button onClick={(e)=> this.handleSurprise(e)}>Surprise Me!</button> */}
+        <h4>What do you have in mind today?</h4>
+        <button onClick={(e)=> this.handleSurprise(e)}>Surprise Me!</button>
         
-        {/* <FoodSearch fetchRecipe={this.handleQuery} />
+        <FoodSearch fetchRecipe={this.handleQuery} />
         <FoodList surprises={this.props.recipes} queryResult={this.props.targetRecipe}/>
-        <RecipeInput /> */}
+        {/* <RecipeInput /> */}
+        {/* <RecipeStorage recipeDB={this.props.savedRecipe}/> */}
+        {/* <ul>
+            {backEnd()}
+        </ul> */}
        
-       <ul>
-         {backEnd()}
-      </ul>
       </div>
     )
   }

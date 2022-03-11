@@ -7,7 +7,7 @@ import RecipeInput from './RecipeInput';
 export default function Home() {
   return (
     <div>
-        <h3>This will be my home page</h3>
+        {/* <h3>This will be my home page</h3> */}
         {/* <Link to="/"> Home </Link><br/>
         <Link to="/recipes"> Saved Recipes </Link><br/>
         <Link to="/recipes/new"> Create Own Recipes </Link><br/> */}
@@ -18,7 +18,7 @@ export default function Home() {
             <Route exact path="/recipes/new" element={< RecipeInput/>} />  
         </Routes>  */}
 
-        {/* <CookBookIndex /> */}
+        <CookBookIndex />
         
     </div>
   )

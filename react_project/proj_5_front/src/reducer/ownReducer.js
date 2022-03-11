@@ -1,4 +1,4 @@
-import { GET_SAVED_RECIPE, CREATE_RECIPE } from "../actions/actionTypes";
+import { GET_SAVED_RECIPE, CREATE_RECIPE, SAVE_RECIPE } from "../actions/actionTypes";
 
 export default function ownReducer(state = {ownRecipe: []}, action){
     switch (action.type) {
@@ -8,6 +8,9 @@ export default function ownReducer(state = {ownRecipe: []}, action){
 
         case CREATE_RECIPE :
             return {...state, ownRecipe:[...state.ownRecipe, action.newRecipe]}
+
+        // case SAVE_RECIPE:
+        //     return{...state, ownRecipe:[...state.ownRecipe, action]}
     
         default:
             return state;
