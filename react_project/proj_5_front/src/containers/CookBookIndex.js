@@ -4,7 +4,9 @@ import FoodSearch from '../components/FoodSearch'
 import FoodList from '../components/FoodList'
 import { connect } from 'react-redux'
 import {fetchRecipe, fetchSurprise } from '../actions/actions'
+import RecipeInput from '../components/RecipeInput'
 // import FavoriteList from '../components/FavoriteList'
+
 
 
 class CookBookIndex extends Component {
@@ -38,6 +40,7 @@ class CookBookIndex extends Component {
           </Routes>  */}
         <FoodSearch fetchRecipe={this.handleQuery} />
         <FoodList surprises={this.props.recipes} queryResult={this.props.targetRecipe}/>
+        <RecipeInput />
       </div>
     )
   }

@@ -17,9 +17,10 @@ const getResult = (result) => {
     }
 }
 
-const createRecipe = () => {
+const createRecipe = (newRecipe) => {
     return{
-        type: CREATE_RECIPE, newRecipe
+        type: CREATE_RECIPE, 
+        newRecipe
     }
 }
 
@@ -60,7 +61,7 @@ export const fetchSurprise = () => {
 
 export const createOwnRecipe = (formInput) =>{
     return dispatch => {
-        fetch("http://localhost:3000", {
+        fetch("http://localhost:3000/recipes", {
             "method": "POST",
             "headers": {
                 'Content-Type': "application/json",

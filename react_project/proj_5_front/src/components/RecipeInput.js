@@ -1,43 +1,54 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { createOwnRecipe } from '../actions/actions'
 
-export default class RecipeInput extends Component {
+class RecipeInput extends Component {
 
     state={
-        recipeName:"",
-        recipeIngredient: "",
-        recipeInstruction: ""
+        name:"",
+        ingredient: "",
+        cooking_Instructions: ""
     }
 
     handleChange = (e) => {
         this.setState({[e.target.name]: e.target.value})
     }
 
+    handleSubmit = (e) => {
+        e.preventDefault();
+        this.props.createOwnRecipe(this.state)
+        this.setState({ 
+            name:"",
+            ingredient: "",
+            cooking_Instructions: ""
+        })
+    }
 
   render() {
     return (
       <div>
           RecipeInput
-        <form>
+        <form onSubmit={this.handleSubmit}>
             <input 
                 type="text" 
                 placeholder='Enter the recipe ingredient' 
-                name="recipeName"
-                value={this.state.recipeName}
+                name="name"
+                value={this.state.name}
                 onChange={this.handleChange}
             />
             <input 
                 type="text" 
                 placeholder='Enter the recipe ingredient'
-                name="recipeName"
-                value={this.state.recipeIngredient}
+                name="ingredient"
+                value={this.state.ingredient}
                 onChange={this.handleChange}
 
             />
             <input 
                 type="text" 
                 placeholder='Enter the recipe instructions'
-                name="recipeName"
-                value={this.state.recipeInstruction}
+                name="cooking_Instructions"
+                value={this.state.cooking_Instructions}
                 onChange={this.handleChange}
             />
             <input type="submit"/>
@@ -47,3 +58,5 @@ export default class RecipeInput extends Component {
     )
   }
 }
+
+export default connect(null, { createOwnRecipe })(RecipeInput)
