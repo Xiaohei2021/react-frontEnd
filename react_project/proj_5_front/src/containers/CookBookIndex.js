@@ -7,8 +7,14 @@ import RecipeStorage from '../components/RecipeStorage'
 
 class CookBookIndex extends Component {
 
+
+
   componentDidMount() { 
     this.props.fetchdata(); 
+  }
+
+  handleDelete = () => {
+    
   }
 
   handleSurprise() {
@@ -22,7 +28,7 @@ class CookBookIndex extends Component {
   render() {
     // console.log(this.props.recipes)
     // console.log(this.props)
-    // const backEnd = () => this.props.savedRecipe.map(r => <li key={r.id}>{r.name}</li>)
+    // const backEnd = () => this.props.savedRecipe.map(r => <li key={r.id}>{r.name}<button onClick={this.handleDelete}>Delete</button></li>)
 
     // debugger
     return (
@@ -33,7 +39,7 @@ class CookBookIndex extends Component {
         <FoodSearch fetchRecipe={this.handleQuery} />
         <FoodList surprises={this.props.recipes} queryResult={this.props.targetRecipe}/>
         {/* <RecipeInput /> */}
-        {/* <RecipeStorage recipeDB={this.props.savedRecipe}/> */}
+        <RecipeStorage recipeDB={this.props.savedRecipe}/>
         {/* <ul>
             {backEnd()}
         </ul> */}

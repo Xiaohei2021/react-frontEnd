@@ -1,4 +1,4 @@
-import { CREATE_RECIPE, GET_RANDOM_RECIPES, GET_SAVED_RECIPE } from "./actionTypes"
+import { CREATE_RECIPE, DELETE_RECIPE, GET_RANDOM_RECIPES, GET_SAVED_RECIPE } from "./actionTypes"
 import { GET_QUERIED_RECIPE } from "./actionTypes"
 
 
@@ -9,6 +9,14 @@ const addSurprise = (surprise) =>{
     }
 }
 
+
+
+const deleteOwnRecipe = (ownRecipe) => {
+    return{
+        type: DELETE_RECIPE,
+        ownRecipe
+    }
+}
 
 const getResult = (result) => {
     return{

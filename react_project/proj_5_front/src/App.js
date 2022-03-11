@@ -1,7 +1,7 @@
 import { Link, Route, Routes } from 'react-router-dom';
 import CookBookIndex from "./containers/CookBookIndex";
 import RecipeInput from "./components/RecipeInput";
-import Home from './components/Home';
+// import Home from './components/Home';
 import RecipeStorage from './components/RecipeStorage';
 
 
@@ -16,7 +16,7 @@ function App() {
         <Link to="/recipes/new"> Create Own Recipes </Link><br/>
 
         <Routes>
-            <Route exact path="/home" element={< Home/>} />
+            <Route exact path="/home" element={< CookBookIndex/>} />
             <Route exact path="/recipes" element={< RecipeStorage/>} />
             <Route exact path="/recipes/new" element={< RecipeInput/>} />  
         </Routes> 
