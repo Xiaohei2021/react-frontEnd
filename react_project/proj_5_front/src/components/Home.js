@@ -7,15 +7,16 @@ import RecipeInput from './RecipeInput';
 export default function Home() {
   return (
     <div>
-        <Link to="/"> Home </Link><br/>
+        <h3>This will be my home page</h3>
+        {/* <Link to="/"> Home </Link><br/>
         <Link to="/recipes"> Saved Recipes </Link><br/>
-        <Link to="/recipes/new"> Create Own Recipes </Link><br/>
+        <Link to="/recipes/new"> Create Own Recipes </Link><br/> */}
 
-        <Routes>
+        {/* <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/recipes" element={< CookBookIndex/>} />
             <Route exact path="/recipes/new" element={< RecipeInput/>} />  
-        </Routes> 
+        </Routes>  */}
 
         {/* <CookBookIndex /> */}
         
