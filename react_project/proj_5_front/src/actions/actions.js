@@ -11,10 +11,10 @@ const addSurprise = (surprise) =>{
 
 
 
-const deleteOwnRecipe = (ownRecipe) => {
+const deleteOwnRecipe = (id) => {
     return{
         type: DELETE_RECIPE,
-        ownRecipe
+        id
     }
 }
 

@@ -1,8 +1,9 @@
-import { GET_SAVED_RECIPE, CREATE_RECIPE, SAVE_RECIPE } from "../actions/actionTypes";
+import { GET_SAVED_RECIPE, CREATE_RECIPE, SAVE_RECIPE, DELETE_RECIPE } from "../actions/actionTypes";
 
 export default function ownReducer(state = {ownRecipe: []}, action){
+    let idx;
     switch (action.type) {
-
+       
         case GET_SAVED_RECIPE:
             return {...state, ownRecipe: action.savedRecipe}
 
@@ -12,6 +13,10 @@ export default function ownReducer(state = {ownRecipe: []}, action){
         // case SAVE_RECIPE:
         //     return{...state, ownRecipe:[...state.ownRecipe, action]}
     
+        case DELETE_RECIPE:
+            idx = state.ownRecipe.findIndex(recipe => recipe.id === action.id)
+            return{...state,ownRecipe:[...state.ownRecipe.slice(0, idx), ...state.ownRecipe.slice(idx+1)] }
+
         default:
             return state;
     }
