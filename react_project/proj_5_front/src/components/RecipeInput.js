@@ -45,7 +45,7 @@ class RecipeInput extends Component {
 
             />
             <input 
-                type="text" 
+                type="textarea" 
                 placeholder='Enter the recipe instructions'
                 name="cooking_Instructions"
                 value={this.state.cooking_Instructions}

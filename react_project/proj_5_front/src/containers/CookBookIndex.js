@@ -3,18 +3,14 @@ import React, { Component } from 'react'
 import FoodSearch from '../components/FoodSearch'
 import FoodList from '../components/FoodList'
 import { connect } from 'react-redux'
-import {fetchRecipe, fetchSurprise } from '../actions/actions'
+import {fetchRecipe, fetchSurprise, fetchSavedRecipe } from '../actions/actions'
 import RecipeInput from '../components/RecipeInput'
-// import FavoriteList from '../components/FavoriteList'
-
-
 
 class CookBookIndex extends Component {
 
-
-//   state={
-//     queriedDish: []
-// }
+  componentDidMount() { 
+    this.props.fetchdata(); 
+  }
 
   handleSurprise() {
     this.props.fetchSurprise();
@@ -26,8 +22,8 @@ class CookBookIndex extends Component {
 
   render() {
     // console.log(this.props.recipes)
-    console.log(this.props)
-
+    // console.log(this.props)
+    const backEnd = () => this.props.savedRecipe.map(r => <li key={r.id}>{r.name}</li>)
     // debugger
     return (
       <div>
@@ -41,6 +37,10 @@ class CookBookIndex extends Component {
         <FoodSearch fetchRecipe={this.handleQuery} />
         <FoodList surprises={this.props.recipes} queryResult={this.props.targetRecipe}/>
         <RecipeInput />
+       
+       <ul>
+         {backEnd()}
+      </ul>
       </div>
     )
   }
@@ -48,6 +48,7 @@ class CookBookIndex extends Component {
 
   function mapDispatchToProps(dispatch) {
     return {
+      fetchdata: () => dispatch(fetchSavedRecipe()),
       fetchSurprise: () => dispatch(fetchSurprise()),
       fetchRecipe: (query) => dispatch(fetchRecipe(query))
     }
@@ -58,7 +59,8 @@ class CookBookIndex extends Component {
     return{
       
       recipes: state.surprise.randomRecipes,
-      targetRecipe: state.query.queryResult
+      targetRecipe: state.query.queryResult,
+      savedRecipe: state.db.ownRecipe
     }
   }
 export default connect(mapStateToProps, mapDispatchToProps)(CookBookIndex)

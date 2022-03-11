@@ -1,4 +1,4 @@
-import { CREATE_RECIPE, GET_RANDOM_RECIPES } from "./actionTypes"
+import { CREATE_RECIPE, GET_RANDOM_RECIPES, GET_SAVED_RECIPE } from "./actionTypes"
 import { GET_QUERIED_RECIPE } from "./actionTypes"
 
 
@@ -8,7 +8,6 @@ const addSurprise = (surprise) =>{
         surprise
     }
 }
-
 
 const getResult = (result) => {
     return{
@@ -24,6 +23,21 @@ const createRecipe = (newRecipe) => {
     }
 }
 
+const getRecipe = (savedRecipe) => {
+    return{
+        type: GET_SAVED_RECIPE,
+        savedRecipe
+    }
+}
+
+
+export const fetchSavedRecipe = () => {
+    return (dispatch) => {
+        fetch("http://localhost:3000/recipes")
+        .then(r => r.json())
+        .then(data => dispatch(getRecipe(data)))
+    }
+}
 
 export const fetchSurprise = () => {
     return (dispatch) => {
