@@ -1,4 +1,3 @@
-// import { Link, Route, Routes } from 'react-router-dom';
 import React, { Component } from 'react'
 import FoodSearch from '../components/FoodSearch'
 import FoodList from '../components/FoodList'
@@ -27,16 +26,12 @@ class CookBookIndex extends Component {
     // debugger
     return (
       <div>
-        <h4>What do you have in mind today?</h4>
-        <button onClick={(e)=> this.handleSurprise(e)}>Surprise Me!</button>
-          {/* <Link to="/">Home</Link>
-          <Link to="favorite">Favorites</Link>
-          <Routes>
-            <Route path="/favorite" element={<FavoriteList/>} /> 
-          </Routes>  */}
-        <FoodSearch fetchRecipe={this.handleQuery} />
+        {/* <h4>What do you have in mind today?</h4>
+        <button onClick={(e)=> this.handleSurprise(e)}>Surprise Me!</button> */}
+        
+        {/* <FoodSearch fetchRecipe={this.handleQuery} />
         <FoodList surprises={this.props.recipes} queryResult={this.props.targetRecipe}/>
-        <RecipeInput />
+        <RecipeInput /> */}
        
        <ul>
          {backEnd()}
