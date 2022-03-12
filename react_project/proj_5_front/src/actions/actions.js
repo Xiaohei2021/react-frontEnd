@@ -102,22 +102,12 @@ export const createOwnRecipe = (formInput) =>{
     }
 }
 
-// export const deleteRecipe = (formInput) =>{
-//     return dispatch => {
-//         fetch("http://localhost:3000/recipes", {
-//             "method": "POST",
-//             "headers": {
-//                 'Content-Type': "application/json",
-//                 'Accept': "application/json"
-//             },
-//             body: JSON.stringify(formInput)
-//         })
-//         .then(r=>{
-//             if(r.ok){
-//                 r.json().then(newRecipe => dispatch(createRecipe(newRecipe)))
-//             }else{
-//                 r.json().then(err => console.error(err))
-//             }
-//         })
-//     }
-// }
+export const deleteRecipe = id =>{
+    return dispatch => {
+        fetch(`http://localhost:3000/recipes/${id}`, {
+            method: "DELETE"
+        })
+        .then(r=> dispatch(deleteOwnRecipe(id)))
+            
+    }
+}
