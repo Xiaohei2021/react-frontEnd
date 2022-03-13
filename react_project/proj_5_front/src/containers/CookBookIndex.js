@@ -27,7 +27,7 @@ class CookBookIndex extends Component {
 
   render() {
     // console.log(this.props.recipes)
-    // console.log(this.props)
+    console.log(this.props)
     // const backEnd = () => this.props.savedRecipe.map(r => <li key={r.id}>{r.name}<button onClick={this.handleDelete}>Delete</button></li>)
 
     // debugger
