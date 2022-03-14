@@ -4,8 +4,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import Navbar from './Navbar';
-
 import { BrowserRouter as Router } from "react-router-dom"
 import { Provider } from "react-redux";
 import store from "./store";
@@ -16,7 +14,6 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router>
-          <Navbar />
           <App />
       </Router>
     </Provider>

@@ -167,7 +167,6 @@ class Dish extends Component {
     return filteredIngredients = data.filter(i => i.length > 0).join(",")
   }
 
-
   render() {
 
     const meal = this.props.dish /* destructure the object*/
@@ -187,9 +186,6 @@ class Dish extends Component {
         <button onClick={this.handleSave}>Save Recipe</button><hr/>
         {/* {ingredient}  */}
         {/* {data} */}
-  
-
-
 
       </div>
     )
