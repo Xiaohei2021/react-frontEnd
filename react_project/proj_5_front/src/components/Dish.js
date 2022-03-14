@@ -138,8 +138,10 @@
 // }
 
 import React, { Component } from 'react'
+import { saveTheRecipe } from '../actions/actions'
+import { connect } from 'react-redux'
 
-export default class Dish extends Component {
+class Dish extends Component {
 
   state = {
     name:"",
@@ -148,11 +150,21 @@ export default class Dish extends Component {
   }
 
   handleSave = () => {
+    // debugger
     this.setState({
-      name: {this.props.dish.strMeal} ,
-      ingredient: "",
-      cooking_Instructions: ""
+      name: this.props.dish.strMeal ,
+      ingredient: this.extractData(),
+      cooking_Instructions: this.props.dish.strInstructions
     })
+    this.props.saveTheRecipe(this.state)
+  }
+
+  extractData = () =>{
+    let filteredIngredients = {}
+    const meal = this.props.dish 
+    const ingredients = Object.fromEntries(Object.entries(meal).filter(([key]) => key.includes('strIngredient')))
+    const data = Object.keys(ingredients).map(function(key){ return(ingredients[key])})
+    return filteredIngredients = data.filter(i => i.length > 0).join(",")
   }
 
 
@@ -160,9 +172,10 @@ export default class Dish extends Component {
 
     const meal = this.props.dish /* destructure the object*/
     const ingredients = Object.fromEntries(Object.entries(meal).filter(([key]) => key.includes('strIngredient'))); /* Extract out all the desire key and value pairs from the props array and form a new object*/
-    let data = Object.keys(ingredients).map(function(key){ return(ingredients[key])}) /* extract all the values of the new object and put all the values into an array*/
-    let filteredIngredients = data.filter(i => i.length > 0) /* filter all the empty item from the array and return an array with strings*/
-    filteredIngredients = filteredIngredients.join(",") /*join all the array element into a string seperated by commas */
+    const data = Object.keys(ingredients).map(function(key){ return(ingredients[key])}) /* extract all the values of the new object and put all the values into an array*/
+    const filteredIngredients = data.filter(i => i.length > 0).join(",") /* filter all the empty item from the array and return an array with strings*/
+    // filteredIngredients = filteredIngredients.join(",") /*join all the array element into a string seperated by commas */
+    // debugger
 
     return (
       <div>
@@ -182,3 +195,5 @@ export default class Dish extends Component {
     )
   }
 }
+export default connect(null, { saveTheRecipe })(Dish)
+

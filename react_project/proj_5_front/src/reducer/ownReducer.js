@@ -11,7 +11,7 @@ export default function ownReducer(state = {ownRecipe: []}, action){
             return {...state, ownRecipe:[...state.ownRecipe, action.newRecipe]}
 
         case SAVE_RECIPE:
-            targetRecipe={
+            const targetRecipe={
                 name: action.name,
                 ingredient: action.ingredient,
                 cooking_Instructions: action.cooking_Instructions

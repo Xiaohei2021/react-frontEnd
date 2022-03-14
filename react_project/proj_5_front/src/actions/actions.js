@@ -110,6 +110,26 @@ export const createOwnRecipe = (formInput) =>{
     }
 }
 
+export const saveTheRecipe = (APIData) =>{
+    return dispatch => {
+        fetch("http://localhost:3000/recipes", {
+            "method": "POST",
+            "headers": {
+                'Content-Type': "application/json",
+                'Accept': "application/json"
+            },
+            body: JSON.stringify(APIData)
+        })
+        .then(r=>{
+            if(r.ok){
+                r.json().then(targetRecipe => dispatch(absorbRecipe(targetRecipe)))
+            }else{
+                r.json().then(err => console.error(err))
+            }
+        })
+    }
+}
+
 export const deleteRecipe = id =>{
     return dispatch => {
         fetch(`http://localhost:3000/recipes/${id}`, {
