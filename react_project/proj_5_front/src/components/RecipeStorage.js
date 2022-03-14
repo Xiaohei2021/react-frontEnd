@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import { fetchSavedRecipe }from "../actions/actions"
 
 class RecipeStorage extends Component {
-    // const recipeDataBase = () => props.recipeDB.map(r => <Recipe key={r.id} recipe={r}/> )
 
     componentDidMount() { 
       this.props.fetchdata(); 
@@ -19,12 +18,10 @@ class RecipeStorage extends Component {
           RecipeStorage
           {allRecipes}
           <ul>
-              {/* {recipeDataBase()} */}
           </ul>  
       </div>)
   }
 }
-
 
 function mapDispatchToProps(dispatch) {
   return {
