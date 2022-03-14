@@ -1,4 +1,4 @@
-import { CREATE_RECIPE, DELETE_RECIPE, GET_RANDOM_RECIPES, GET_SAVED_RECIPE } from "./actionTypes"
+import { CREATE_RECIPE, DELETE_RECIPE, GET_RANDOM_RECIPES, GET_SAVED_RECIPE, SAVE_RECIPE } from "./actionTypes"
 import { GET_QUERIED_RECIPE } from "./actionTypes"
 
 
@@ -9,19 +9,19 @@ const addSurprise = (surprise) =>{
     }
 }
 
-
-
-const deleteOwnRecipe = (id) => {
-    return{
-        type: DELETE_RECIPE,
-        id
-    }
-}
-
 const getResult = (result) => {
     return{
         type: GET_QUERIED_RECIPE,
         result
+    }
+}
+
+
+
+const getRecipe = (savedRecipe) => {
+    return{
+        type: GET_SAVED_RECIPE,
+        savedRecipe
     }
 }
 
@@ -32,19 +32,17 @@ const createRecipe = (newRecipe) => {
     }
 }
 
-const getRecipe = (savedRecipe) => {
+const absorbRecipe =(targetRecipe) =>{
     return{
-        type: GET_SAVED_RECIPE,
-        savedRecipe
+        type: SAVE_RECIPE,
+        targetRecipe
     }
 }
 
-
-export const fetchSavedRecipe = () => {
-    return (dispatch) => {
-        fetch("http://localhost:3000/recipes")
-        .then(r => r.json())
-        .then(data => dispatch(getRecipe(data)))
+const deleteOwnRecipe = (id) => {
+    return{
+        type: DELETE_RECIPE,
+        id
     }
 }
 
@@ -80,6 +78,16 @@ export const fetchSurprise = () => {
     // console.error(err);
     // });
   }
+}
+
+
+
+export const fetchSavedRecipe = () => {
+    return (dispatch) => {
+        fetch("http://localhost:3000/recipes")
+        .then(r => r.json())
+        .then(data => dispatch(getRecipe(data)))
+    }
 }
 
 export const createOwnRecipe = (formInput) =>{

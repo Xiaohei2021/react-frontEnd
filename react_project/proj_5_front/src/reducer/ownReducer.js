@@ -10,8 +10,13 @@ export default function ownReducer(state = {ownRecipe: []}, action){
         case CREATE_RECIPE :
             return {...state, ownRecipe:[...state.ownRecipe, action.newRecipe]}
 
-        // case SAVE_RECIPE:
-        //     return{...state, ownRecipe:[...state.ownRecipe, action]}
+        case SAVE_RECIPE:
+            targetRecipe={
+                name: action.name,
+                ingredient: action.ingredient,
+                cooking_Instructions: action.cooking_Instructions
+            }
+            return{...state, ownRecipe:[...state.ownRecipe, action.targetRecipe]}
     
         case DELETE_RECIPE:
             idx = state.ownRecipe.findIndex(recipe => recipe.id === action.id)

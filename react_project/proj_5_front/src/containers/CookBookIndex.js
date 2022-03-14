@@ -7,14 +7,8 @@ import RecipeStorage from '../components/RecipeStorage'
 
 class CookBookIndex extends Component {
 
-
-
   componentDidMount() { 
     this.props.fetchdata(); 
-  }
-
-  handleDelete = () => {
-    
   }
 
   handleSurprise() {
@@ -27,9 +21,8 @@ class CookBookIndex extends Component {
 
   render() {
     // console.log(this.props.recipes)
-    console.log(this.props)
+    // console.log(this.props)
     // const backEnd = () => this.props.savedRecipe.map(r => <li key={r.id}>{r.name}<button onClick={this.handleDelete}>Delete</button></li>)
-
     // debugger
     return (
       <div>
@@ -60,7 +53,6 @@ class CookBookIndex extends Component {
   function mapStateToProps(state){
     // console.log(state)
     return{
-      
       recipes: state.surprise.randomRecipes,
       targetRecipe: state.query.queryResult,
       savedRecipe: state.db.ownRecipe
