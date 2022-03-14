@@ -179,7 +179,7 @@ class Dish extends Component {
 
     return (
       <div>
-        Dish
+        <h3>Here is a recipe you can learn from today!</h3>
 
         {this.props.dish.strMeal}-----
         {filteredIngredients}<br/> 

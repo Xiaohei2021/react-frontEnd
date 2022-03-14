@@ -22,7 +22,7 @@ export default class FoodList extends Component {
 
     return (
       <div>
-        <h3>Here are the recipes you can learn from today!</h3>
+        
     
         {randomdishes}  
         {recipeList}

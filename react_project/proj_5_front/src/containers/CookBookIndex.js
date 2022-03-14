@@ -32,7 +32,7 @@ class CookBookIndex extends Component {
         <FoodSearch fetchRecipe={this.handleQuery} />
         <FoodList surprises={this.props.recipes} queryResult={this.props.targetRecipe}/>
         {/* <RecipeInput /> */}
-        <RecipeStorage recipeDB={this.props.savedRecipe}/>
+        {/* <RecipeStorage recipeDB={this.props.savedRecipe}/> */}
         {/* <ul>
             {backEnd()}
         </ul> */}
