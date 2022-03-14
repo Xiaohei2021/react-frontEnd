@@ -11,9 +11,9 @@ function App() {
       <h1>
         Leon's Cook Book
       </h1>      
-        <Link to="/home"> Home </Link><br/>
+        {/* <Link to="/home"> Home </Link><br/>
         <Link to="/recipes"> Saved Recipes </Link><br/>
-        <Link to="/recipes/new"> Create Own Recipes </Link><br/>
+        <Link to="/recipes/new"> Create Own Recipes </Link><br/> */}
 
         <Routes>
             <Route exact path="/home" element={< CookBookIndex/>} />
