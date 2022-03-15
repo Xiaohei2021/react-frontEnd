@@ -153,38 +153,36 @@ class Dish extends Component {
     
     this.setState({
       name: this.props.dish.strMeal ,
-      ingredient: this.extractData(),
+      ingredient: this.props.ingredients,
       cooking_Instructions: this.props.dish.strInstructions
     })
     // debugger
-    // this.props.saveTheRecipe(this.state)
+    this.props.saveTheRecipe(this.state)
   }
 
-  extractData = () =>{
-    let filteredIngredients = {}
-    const meal = this.props.dish 
-    const ingredients = Object.fromEntries(Object.entries(meal).filter(([key]) => key.includes('strIngredient')))
-    const data = Object.keys(ingredients).map(function(key){ return(ingredients[key])})
-    return filteredIngredients =()=> data.filter(i => i !== null).join(",")
-  }
+  // extractData = () =>{
+  //   let filteredIngredients = {}
+  //   const meal = this.props.dish 
+  //   const ingredients = Object.fromEntries(Object.entries(meal).filter(([key]) => key.includes('strIngredient')))
+  //   const data = Object.keys(ingredients).map(function(key){ return(ingredients[key])})
+  //   return filteredIngredients =()=> data.filter(i => i !== null).join(",")
+  // }
 
   render() {
 
-    const meal = this.props.dish /* destructure the object*/
-    const ingredients = Object.fromEntries(Object.entries(meal).filter(([key]) => key.includes('strIngredient'))); /* Extract out all the desire key and value pairs from the props array and form a new object*/
-    const data = Object.keys(ingredients).map(function(key){ return(ingredients[key])}) /* extract all the values of the new object and put all the values into an array*/
-    const filteredIngredients = data.filter(i => i !== null).join(",") /* filter all the empty item from the array and return an array with strings*/
-    // const filteredIngredients = data.filter(i => {debugger} )
-
-    // filteredIngredients = filteredIngredients.join(",") /*join all the array element into a string seperated by commas */
+    // const meal = this.props.dish /* destructure the object*/
+    // const ingredients = Object.fromEntries(Object.entries(meal).filter(([key]) => key.includes('strIngredient'))); /* Extract out all the desire key and value pairs from the props array and form a new object*/
+    // const data = Object.keys(ingredients).map(function(key){ return(ingredients[key])}) /* extract all the values of the new object and put all the values into an array*/
+    // const filteredIngredients = data.filter(i => i !== null).join(",") /* filter all the empty item from the array and return an array with strings*/
+    // // const filteredIngredients = data.filter(i => {debugger} )
     // debugger
-
+    // console.log(this.state)
     return (
       <div>
         <h3>Here is a recipe you can learn from today!</h3>
 
         {this.props.dish.strMeal}-----
-        {filteredIngredients}<br/> 
+        {this.props.ingredients}<br/> 
         {this.props.dish.strInstructions}<br/>
         <button onClick={this.handleSave}>Save Recipe</button><hr/>
         {/* {ingredient}  */}
