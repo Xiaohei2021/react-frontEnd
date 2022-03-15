@@ -19,6 +19,7 @@ export default class QueryList extends Component {
         )})        
     return (
         <div>
+            <h3>Here is a recipe you can learn from today!</h3>
             {recipeList()}
         </div>
     )
