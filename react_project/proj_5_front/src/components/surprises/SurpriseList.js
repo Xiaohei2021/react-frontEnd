@@ -15,10 +15,6 @@ export default class SurpriseList extends Component {
           <Dish key={recipe.idMeal} dish={recipe} link />
         )})
 
-      // const recipeList =this.props.queryResult.map(recipe => {
-      //   return (
-      //     <Dish key={recipe.idMeal} dish={recipe} link />
-      //   )})     
 
     return (
       <div>
