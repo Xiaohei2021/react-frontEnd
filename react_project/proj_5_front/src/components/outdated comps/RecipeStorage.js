@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Recipe from './Recipe'
+import Recipe from '../Recipe'
 import { connect } from 'react-redux'
-import { fetchSavedRecipe }from "../actions/actions"
+import { fetchSavedRecipe }from "../../actions/actions"
 
 class RecipeStorage extends Component {
 

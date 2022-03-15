@@ -1,17 +1,6 @@
 import { NavLink } from "react-router-dom"
 import React, { Component } from 'react'
 
-
-// const link = {
-//     width: '100px',
-//     padding: '12px',
-//     margin: '0 6px 6px',
-//     background: 'green',
-//     textDecoration: 'none',
-//     color: 'white',
-// }
-
-
 export default class Navbar extends Component {
   render() {
     return (
@@ -32,20 +21,27 @@ export default class Navbar extends Component {
                     ({ isActive }) => isActive?{ color: '#fff', background: '#008917',}:{ color: '#545e6f', background: '#fff' }
                 }
                 className="nav-bar"
-                >Saved Recipes
+                >All Recipes
             </NavLink>
 
-
-
-
             <NavLink
-                to="/recipes/new"
+                to="/surprises"
                 style={
                     ({ isActive }) => isActive?{ color: '#fff', background: '#008917',}:{ color: '#545e6f', background: '#fff' }
                 }
                 className="nav-bar"
-                >Create Own Recipes
+                >Get Some Inspiration
             </NavLink>
+
+            <NavLink
+                to="/query"
+                style={
+                    ({ isActive }) => isActive?{ color: '#fff', background: '#008917',}:{ color: '#545e6f', background: '#fff' }
+                }
+                className="nav-bar"
+                >Search for a Specific Recipe
+            </NavLink>
+
         </div>)
   }
 }

@@ -164,7 +164,7 @@ class Dish extends Component {
     const meal = this.props.dish 
     const ingredients = Object.fromEntries(Object.entries(meal).filter(([key]) => key.includes('strIngredient')))
     const data = Object.keys(ingredients).map(function(key){ return(ingredients[key])})
-    return filteredIngredients = data.filter(i => i.length > 0).join(",")
+    return filteredIngredients =()=> data.filter(i => i.length > 0).join(",")
   }
 
   render() {
