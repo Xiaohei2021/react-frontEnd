@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class FoodSearch extends Component {
+export default class QueryInput extends Component {
 
 state={
     query: ""

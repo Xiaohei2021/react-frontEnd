@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import {fetchSavedRecipe  } from '../actions/actions'
+import { connect } from 'react-redux'
+import { fetchRecipe } from '../actions/actions'
+import QueryInput from '../components/query/QueryInput'
 
 class QueryContainer extends Component {
 
@@ -10,13 +12,13 @@ class QueryContainer extends Component {
   render() {
     return (
         <div>
-            QueryContainer
-
-            <FoodSearch fetchRecipe={this.handleQuery} />
+            
+            <h3>Enter the name of the ingredient or dish you are craving for.</h3>
+            <QueryInput fetchRecipe={this.handleQuery} />
 
         </div>
     )
   }
 }
 
-export default connect(null, {fetchSavedRecipe})(QueryContainer)
+export default connect(null, { fetchRecipe })(QueryContainer)

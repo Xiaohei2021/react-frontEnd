@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import FoodSearch from '../components/FoodSearch'
-import FoodList from '../components/FoodList'
+import FoodSearch from '../query/QueryInput'
+import FoodList from '../surprises/SurpriseList'
 import { connect } from 'react-redux'
-import {fetchRecipe, fetchSurprise, fetchSavedRecipe } from '../actions/actions'
+import {fetchRecipe, fetchSurprise, fetchSavedRecipe } from '../../actions/actions'
 // import RecipeStorage from '../components/RecipeStorage'
 
 class CookBookIndex extends Component {

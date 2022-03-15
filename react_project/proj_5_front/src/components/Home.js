@@ -1,5 +1,5 @@
 import React from 'react'
-import CookBookIndex from '../containers/CookBookIndex'
+import CookBookIndex from './outdated comps/CookBookIndex'
 
 export default function Home() {
   return (

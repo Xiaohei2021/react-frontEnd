@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import FoodList from '../components/FoodList'
+import FoodList from '../components/surprises/SurpriseList'
 import { connect } from 'react-redux'
 import {fetchSurprise } from '../actions/actions'
 
@@ -10,11 +10,12 @@ class SurpriseContainer extends Component {
         this.props.fetchSurprise();
       }
 
-
   render() {
     return (
         <div>
-            SurpriseContainer
+            <h3>Lets see which dishes our luck will bring us today.</h3>
+            <br/>
+            {/* <br/> */}
             <button onClick={(e)=> this.handleSurprise(e)}>Surprise Me!</button>
             <FoodList surprises={this.props.recipes} queryResult={this.props.targetRecipe}/>
         </div>

@@ -1,14 +1,10 @@
 import { Route, Routes } from 'react-router-dom';
-import CookBookIndex from "./containers/CookBookIndex";
-import RecipeInput from "./components/recipe/RecipeInput";
-// import Home from './components/Home';
-// import RecipeStorage from './components/RecipeStorage';
 import Navbar from './Navbar';
 import "./App.css"
 import CookBookContainer from './containers/CookBookContainer';
 import Home from './components/Home';
-import FoodList from './components/FoodList';
-import FoodSearch from './components/FoodSearch';
+import SurpriseContainer from './containers/SurpriseContainer';
+import QueryContainer from './containers/QueryContainer';
 
 
 function App() {
@@ -21,8 +17,8 @@ function App() {
         <Routes>
             <Route exact path="/home" element={< Home/>} />
             <Route exact path="/recipes" element={< CookBookContainer/>} />
-            <Route exact path="/surprises" element={< FoodList/>} /> 
-            <Route exact path="/query" element={< FoodSearch />} /> 
+            <Route exact path="/surprises" element={< SurpriseContainer/>} /> 
+            <Route exact path="/query" element={< QueryContainer />} /> 
         </Routes> 
     </div>
   );

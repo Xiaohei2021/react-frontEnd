@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Dish from './Dish'
+import Dish from '../Dish'
 
-export default class FoodList extends Component {
+export default class SurpriseList extends Component {
   render() {
     // debugger
       // const { surprises } = this.props;
@@ -15,17 +15,17 @@ export default class FoodList extends Component {
           <Dish key={recipe.idMeal} dish={recipe} link />
         )})
 
-      const recipeList =this.props.queryResult.map(recipe => {
-        return (
-          <Dish key={recipe.idMeal} dish={recipe} link />
-        )})     
+      // const recipeList =this.props.queryResult.map(recipe => {
+      //   return (
+      //     <Dish key={recipe.idMeal} dish={recipe} link />
+      //   )})     
 
     return (
       <div>
         
     
         {randomdishes}  
-        {recipeList}
+        {/* {recipeList} */}
       </div>
       
     )
