@@ -6,7 +6,6 @@ export default class QueryList extends Component {
     
   render() {
 
-
     const recipeList =()=> this.props.fetchedRecipe.map(recipe => {
         // console.log(this.props)
         
@@ -19,7 +18,7 @@ export default class QueryList extends Component {
         )})        
     return (
         <div>
-            <h3>Here is a recipe you can learn from today!</h3>
+            <h3>Here are all the recipe you can learn from today!</h3>
             {recipeList()}
         </div>
     )

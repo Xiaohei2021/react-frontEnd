@@ -12,7 +12,7 @@ class Dish extends Component {
       ingredients: this.props.ingredients,
       cooking_Instructions: this.props.dish.strInstructions
     }
-    
+
     this.props.saveTheRecipe(data)
   }
 
@@ -20,6 +20,7 @@ class Dish extends Component {
     return (
       <div>
         <h4>{this.props.dish.strMeal}</h4>
+        <img src={this.props.dish.strMealThumb}/><br/>
         {this.props.ingredients}<br/> 
         {this.props.dish.strInstructions}<br/>
         <button onClick={this.handleSave}>Save Recipe</button><hr/>
