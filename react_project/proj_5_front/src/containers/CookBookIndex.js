@@ -23,7 +23,6 @@ class CookBookIndex extends Component {
     return (
       <div>
         <h4>What do you have in mind today?</h4>
-        <button onClick={(e)=> this.handleSurprise(e)}>Surprise Me!</button>
         
         <FoodSearch fetchRecipe={this.handleQuery} />
         <FoodList surprises={this.props.recipes} queryResult={this.props.targetRecipe}/>

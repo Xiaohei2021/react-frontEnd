@@ -1,5 +1,5 @@
 import React from 'react'
-import { deleteRecipe } from '../actions/actions'
+import { deleteRecipe } from '../../actions/actions'
 import { connect } from 'react-redux'
 
 

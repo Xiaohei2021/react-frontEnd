@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import Recipe from '../components/Recipe'
+import Recipe from '../components/recipe/Recipe'
 import { connect } from 'react-redux'
 import { fetchSavedRecipe }from "../actions/actions"
-import RecipeInput from '../components/RecipeInput';
+import RecipeInput from '../components/recipe/RecipeInput';
 
-class RecipeStorage extends Component {
+class CookBookContainer extends Component {
 
     componentDidMount() { 
       this.props.fetchdata(); 
@@ -36,4 +36,4 @@ function mapStateToProps(state){
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(RecipeStorage)
+export default connect(mapStateToProps, mapDispatchToProps)(CookBookContainer)
