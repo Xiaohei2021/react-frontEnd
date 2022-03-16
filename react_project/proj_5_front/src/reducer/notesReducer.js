@@ -6,11 +6,11 @@ export default function ownReducer(state = {notes: []}, action){
        
 
         case CREATE_NOTE :
-            return {...state, ownRecipe:[...state.ownRecipe, action.newRecipe]}
+            return {...state, notes:[...state.notes, action.newRecipe]}
     
         case DELETE_NOTE:
-            idx = state.ownRecipe.findIndex(recipe => recipe.id === action.id)
-            return{...state,ownRecipe:[...state.ownRecipe.slice(0, idx), ...state.ownRecipe.slice(idx+1)] }
+            idx = state.notes.findIndex(recipe => recipe.id === action.id)
+            return{...state,notes:[...state.notes.slice(0, idx), ...state.notes.slice(idx+1)] }
 
         default:
             return state;

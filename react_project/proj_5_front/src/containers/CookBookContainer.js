@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Recipe from '../components/recipe/Recipe'
 import { connect } from 'react-redux'
 import { Route } from "react-router-dom";
-import { fetchSavedRecipe }from "../actions/actions"
+import { fetchSavedRecipe }from "../actions/recipeActions/recipe"
 import RecipeInput from '../components/recipe/RecipeInput';
 // import RecipeList from '../components/recipe/RecipeList'
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import FoodList from '../components/surprises/SurpriseList'
 import { connect } from 'react-redux'
-import {fetchSurprise } from '../actions/actions'
+import {fetchSurprise } from '../actions/surpriseActions/surprise'
 
 
 class SurpriseContainer extends Component {

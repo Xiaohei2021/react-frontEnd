@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchRecipe } from '../actions/actions'
+import { fetchRecipe } from '../actions/queryActions/query'
 import QueryInput from '../components/query/QueryInput'
 import QueryList from '../components/query/QueryList'
 
