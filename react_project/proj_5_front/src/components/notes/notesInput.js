@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class ReviewInput extends Component {
+export default class notesInput extends Component {
 
     state = {notes: ""}
 
