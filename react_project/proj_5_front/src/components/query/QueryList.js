@@ -11,7 +11,9 @@ export default class QueryList extends Component {
         
         const ingredients = Object.fromEntries(Object.entries(recipe).filter(([key]) => key.includes('strIngredient')))
         const data = Object.keys(ingredients).map(function(key){ return(ingredients[key])})
-        const filteredIngredients = data.filter(i => i.length).join(",")
+        // const filteredIngredients = data.filter(i => console.log(i))
+        const filteredIngredients = data.filter(i => i.length && i!== null).join(",")
+        // debugger
         // debugger
         return (
           <Dish key={recipe.idMeal} dish={recipe} ingredients={filteredIngredients} link />

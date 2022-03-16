@@ -16,7 +16,8 @@ function App() {
       <Navbar />
         <Routes>
             <Route exact path="/home" element={< Home/>} />
-            <Route exact path="/recipes" element={< CookBookContainer/>} />
+            <Route exact path="/recipes" render={routerProps => <CookBookContainer/>} />
+        
             <Route exact path="/surprises" element={< SurpriseContainer/>} /> 
             <Route exact path="/query" element={< QueryContainer />} /> 
         </Routes> 

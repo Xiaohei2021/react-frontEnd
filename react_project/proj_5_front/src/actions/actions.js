@@ -17,7 +17,6 @@ const getResult = (result) => {
 }
 
 
-
 const getRecipe = (savedRecipe) => {
     return{
         type: GET_SAVED_RECIPE,
@@ -71,15 +70,21 @@ export const fetchSurprise = () => {
             "x-rapidapi-host": "themealdb.p.rapidapi.com",
             "x-rapidapi-key": "da4f016a88msh0f102f0fca24bfcp1fd784jsn2faf65ebf551"}
         })
-    .then(r => r.json())
-    .then(result => dispatch(getResult(result) ))
+        .then(r=>{
+            if(r.ok){
+                r.json().then(result => dispatch(getResult(result) ))
+            }else{
+                r.json().then(err => console.error(err))
+            }
+        })
+    // .then(r => r.json())
+    // .then(result => dispatch(getResult(result) ))
     // .then(surprise => console.log(surprise))
     // .catch(err => {
     // console.error(err);
     // });
   }
 }
-
 
 
 export const fetchSavedRecipe = () => {

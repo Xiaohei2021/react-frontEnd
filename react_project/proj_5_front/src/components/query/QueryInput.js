@@ -14,6 +14,7 @@ handleSubmit = (e) => {
   e.preventDefault();
   // debugger
   this.props.fetchRecipe(this.state.query)
+  this.setState({query: ""})
 }
 
   render() {
