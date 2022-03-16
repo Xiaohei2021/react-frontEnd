@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import Recipe from '../components/recipe/Recipe'
+// import Recipe from '../components/recipe/Recipe'
 import { connect } from 'react-redux'
 import { fetchSavedRecipe }from "../actions/actions"
 import RecipeInput from '../components/recipe/RecipeInput';
+import RecipeList from '../components/recipe/RecipeList'
 
 class CookBookContainer extends Component {
 
@@ -11,13 +12,14 @@ class CookBookContainer extends Component {
     }
 
   render(){
-    const allRecipes = this.props.savedRecipe.map(r => <Recipe key={r.id} recipe={r}/> )
+    // const allRecipes = this.props.savedRecipe.map(r => <Recipe key={r.id} recipe={r}/> )
 
     // debugger
     return (
       <div>
           <RecipeInput/><hr/>
-          {allRecipes}
+          <RecipeList />
+          {/* {allRecipes} */}
           
       </div>)
   }
