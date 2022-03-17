@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { createOwnRecipe } from '../../actions/recipeActions/recipe'
 
+
+
 class RecipeInput extends Component {
 
     state={
@@ -25,6 +27,8 @@ class RecipeInput extends Component {
     }
 
   render() {
+
+
     return (
       <div>
           RecipeInput

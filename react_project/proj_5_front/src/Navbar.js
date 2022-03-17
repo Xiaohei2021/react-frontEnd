@@ -42,6 +42,16 @@ export default class Navbar extends Component {
                 >Search for a Specific Recipe
             </NavLink>
 
+            <NavLink
+                to="/recipes/new"
+                style={
+                    ({ isActive }) => isActive?{ color: '#fff', background: '#008917',}:{ color: '#545e6f', background: '#fff' }
+                }
+                className="nav-bar"
+                >Create a Recipe
+            </NavLink>
+
+
         </div>)
   }
 }
