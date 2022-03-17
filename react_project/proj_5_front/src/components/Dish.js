@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { saveTheRecipe } from '../actions/actions'
+import { saveTheRecipe } from '../actions/recipeActions/recipe'
 import { connect } from 'react-redux'
 
 class Dish extends Component {

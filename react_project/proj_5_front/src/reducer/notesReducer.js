@@ -1,4 +1,4 @@
-import { } from "../actions/actionTypes";
+import { CREATE_NOTE, DELETE_NOTE } from "../actions/actionTypes";
 
 export default function ownReducer(state = {notes: []}, action){
     let idx;

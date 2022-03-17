@@ -1,4 +1,4 @@
-import { GET_RANDOM_RECIPES } from "./actionTypes"
+import { GET_RANDOM_RECIPES } from "../actionTypes"
 
 
 const addSurprise = (surprise) =>{
