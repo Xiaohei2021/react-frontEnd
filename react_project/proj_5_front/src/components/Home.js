@@ -1,13 +1,29 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+
 // import Navbar from '../Navbar';
+
+
+
 
 export default function Home() {
   return (
     <div>
       {/* <Navbar /> */}
 
-      <h1>What is your tummy yearning for this fine day?</h1>
-      
+      <nav
+      style={{
+        borderBottom: "solid 1px",
+        paddingBottom: "1rem",
+      }}>
+
+      <Link to="/home">Home</Link> |{""}
+      <Link to="/recipes">All Recipes</Link> |{""}
+      <Link to=""></Link>
+      <Link to="/surprises">Get Some Inspiration</Link> |{""}
+      <Link to="/query">Search for a Specific Recipe</Link> |{""}
+      <Link to=""></Link>
+    </nav>
     </div>
   )
 }

@@ -1,16 +1,11 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 // import { useNavigate } from "react-router-dom";
 import "./App.css"
 
 
-import Home from './components/Home';
-import CookBookContainer from './containers/CookBookContainer';
-import SurpriseContainer from './containers/SurpriseContainer';
-import QueryContainer from './containers/QueryContainer';
-import RecipeInput from './components/recipe/RecipeInput';
-import Recipe from './components/recipe/Recipe';
+
 // import Error from './components/Error';
-import Navbar from './Navbar';
+// import Navbar from './Navbar';
 
 
 
@@ -30,24 +25,27 @@ function App() {
       <h1>
         Leon's Cook Book
       </h1>
-{/* 
-      <button onClick={handleCreate}>Create Recipe </button><br/><br/> 
-      <button onClick={handleRecipes}>See Recipes</button>  */}
-  
-        <Navbar />
+    
+      <h1>What is your tummy yearning for this fine day?</h1>
 
-        <Routes>
+        {/* <Navbar /> */}
+
+        {/* <Routes>
           <Route path="/home" element={< Home/>} />
           <Route path="/recipes" element={< CookBookContainer />} >
             <Route path={"new"} element={< RecipeInput />}/>
             <Route path={":recipeId"} element={<Recipe />} />
-          </Route>
+          </Route> */}
           {/* <Route path="/recipes" element={< CookBookContainer/>} /> */}
           {/* <Route path="/recipes/new" element={< RecipeInput/>} /> */}
-          <Route path="/surprises" element={< SurpriseContainer/>} /> 
-          <Route path="/query" element={< QueryContainer />} /> 
+          {/* <Route path="/surprises" element={< SurpriseContainer/>} /> 
+          <Route path="/query" element={< QueryContainer />} />  */}
           {/* <Route path="*" element={<Error />} /> */}
-        </Routes> 
+        {/* </Routes>  */}
+
+ {/* <button onClick={handleCreate}>Create Recipe </button><br/><br/> 
+      <button onClick={handleRecipes}>See Recipes</button>    */}
+
     </div>
   );
 }
