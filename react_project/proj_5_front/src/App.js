@@ -9,7 +9,7 @@ import SurpriseContainer from './containers/SurpriseContainer';
 import QueryContainer from './containers/QueryContainer';
 import RecipeInput from './components/recipe/RecipeInput';
 import Recipe from './components/recipe/Recipe';
-import Error from './components/Error';
+// import Error from './components/Error';
 import Navbar from './Navbar';
 
 
@@ -36,25 +36,17 @@ function App() {
   
         <Navbar />
 
-      {/* <div className='navbar'>
-        <nav>
-          <Link to="/home">Home</Link>
-          <Link to="/recipes">All Recipes</Link>
-        </nav>
-      </div> */}
-      
-
         <Routes>
           <Route path="/home" element={< Home/>} />
-          <Route path="/recipes" element={< CookBookContainer/>} />
-          {/* <Route path="/recipes/new" element={< RecipeInput/>} /> */}
           <Route path="/recipes" element={< CookBookContainer />} >
             <Route path={"new"} element={< RecipeInput />}/>
             <Route path={":recipeId"} element={<Recipe />} />
           </Route>
+          {/* <Route path="/recipes" element={< CookBookContainer/>} /> */}
+          {/* <Route path="/recipes/new" element={< RecipeInput/>} /> */}
           <Route path="/surprises" element={< SurpriseContainer/>} /> 
           <Route path="/query" element={< QueryContainer />} /> 
-          <Route path="*" element={<Error />} />
+          {/* <Route path="*" element={<Error />} /> */}
         </Routes> 
     </div>
   );

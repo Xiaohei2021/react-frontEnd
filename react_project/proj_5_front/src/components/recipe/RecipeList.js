@@ -5,17 +5,15 @@ const RecipeList = (props) => {
 
   console.log(props)
   // debugger
-    const allRecipes = Object.keys(props.savedRecipe).map((recipeId) => (
-        <Link key={recipeId.id} to={`/recipes/${recipeId}`} >
+    const recipesList = Object.keys(props.savedRecipe).map((recipeId) => (
+        <Link key={recipeId} to={`/recipes/${recipeId}`} >
             {props.savedRecipe[recipeId].name}<br/>
         </Link>))
   // debugger
   return (
     <div>
-        {allRecipes}
-        
-      <h2>RecipeList<br/></h2>
-      
+        <h2>RecipeList<br/></h2>
+        {recipesList}
     </div>
   )
 }

@@ -31,7 +31,7 @@ class RecipeInput extends Component {
 
     return (
       <div>
-          RecipeInput
+          <h4>Please enter the recipe information below</h4>
         <form onSubmit={this.handleSubmit}>
             <input 
                 type="text" 
