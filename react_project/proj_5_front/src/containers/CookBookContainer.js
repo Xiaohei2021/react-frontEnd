@@ -14,8 +14,8 @@ class CookBookContainer extends Component {
     }
 
   render(){
-    // const allRecipes = this.props.savedRecipe.map(r => <Recipe key={r.id} recipe={r}/> )
-    // console.log(this.props)
+    const allRecipes = this.props.savedRecipe.map(r => <Recipe key={r.id} recipe={r}/> )
+    console.log(this.props)
     return (
       <div>
 
@@ -23,6 +23,7 @@ class CookBookContainer extends Component {
             borderBottom: "solid 1px",
             paddingBottom: "1rem",
           }}>
+            <Link to="/home">Home</Link> |{""}
             <Link to="new">Create New Recipe</Link> |{""}
             <Link to="list">See All Recipes</Link> |{""}
             {/* <Link to=":recipeId">See a recipeActions</Link> |{""} */}
@@ -51,3 +52,21 @@ function mapStateToProps(state){
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CookBookContainer)
+
+
+// export default function CookBookContainer(){
+//     return (
+//       <div>
+
+//           <nav style={{
+//             borderBottom: "solid 1px",
+//             paddingBottom: "1rem",
+//           }}>
+//             <Link to="/home">Home</Link> |{""}
+//             <Link to="new">Create New Recipe</Link> |{""}
+//             <Link to="list">See All Recipes</Link> |{""}
+//           </nav>
+//           <Outlet/>
+    
+//       </div>)
+//   }

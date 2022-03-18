@@ -20,7 +20,7 @@ class SurpriseContainer extends Component {
             paddingBottom: "1rem",
           }}>
             <Link to="/home">Home</Link> |{""}
-            <Link to="/recipes">All Recipes</Link> |{""}
+            <Link to="/recipes">Recipe Index</Link> |{""}
             <Link to=""></Link>
             <Link to="/query">Search for a Specific Recipe</Link> |{""}
             <Link to=""></Link>
