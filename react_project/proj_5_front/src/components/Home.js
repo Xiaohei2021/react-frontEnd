@@ -6,8 +6,10 @@ export default function Home() {
   return (
     <div>
       {/* <Navbar /> */}
+      <h1>This will be the temperorary home page</h1>
+            {/* <h1>What is your tummy yearning for on this fine day?</h1> */}
 
-      <nav
+      {/* <nav
       style={{
         borderBottom: "solid 1px",
         paddingBottom: "1rem",
@@ -18,7 +20,7 @@ export default function Home() {
       <Link to="/surprises">Get Some Inspiration</Link> |{""}
       <Link to="/query">Search for a Specific Recipe</Link> |{""}
       <Link to=""></Link>
-    </nav>
+    </nav> */}
     </div>
   )
 }

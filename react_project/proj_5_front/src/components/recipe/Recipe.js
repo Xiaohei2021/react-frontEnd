@@ -4,34 +4,35 @@ import { connect } from 'react-redux'
 import { useParams } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 
-class Recipe extends React.Component {
-  render() {
-  // let params = useParams();
-  // debugger
-    return (
-        <div>
-            {this.props.recipe.name}
-            <button onClick={ () => this.props.deleteRecipe(this.props.recipe.id)}>Delete</button>
-    </div>
-    )
-  }
-}
-export default connect(null, {deleteRecipe})(Recipe)
-
-//  function Recipe(props) {
-
-//   // const dispatch = useDispatch();
-//   // const params = useParams();
-
+// class Recipe extends React.Component {
+//   render() {
+//   // let params = useParams();
 //   // debugger
-//   return (
-//     <div>
-//       {props.recipe.name}--- 
-//       {/* {props.recipe.ingredient}  */}
-//       {/* {props.recipe.cooking_Instructions} */}
-//       {/* <button onClick={ dispatch(deleteRecipe(props.recipe.id))}>Delete</button> */}
-
+//     return (
+//         <div>
+//             {this.props.recipe.name}
+//             <button onClick={ () => this.props.deleteRecipe(this.props.recipe.id)}>Delete</button>
 //     </div>
-//   )
+//     )
+//   }
 // }
-// export default connect(null, { deleteRecipe })(Recipe)
+// export default connect(null, {deleteRecipe})(Recipe)
+
+ function Recipe() {
+
+  // const dispatch = useDispatch();
+  const {id} = useParams();
+
+  // debugger
+  return (
+    <div>
+      Recipe id: {id}
+      {/* {savedRecipe[id-1].name}---  */}
+      {/* {props.recipe.ingredient}  */}
+      {/* {props.recipe.cooking_Instructions} */}
+      {/* <button onClick={ dispatch(deleteRecipe(props.recipe.id))}>Delete</button> */}
+
+    </div>
+  )
+}
+export default connect(null, { deleteRecipe })(Recipe)

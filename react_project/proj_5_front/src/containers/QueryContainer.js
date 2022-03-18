@@ -16,7 +16,7 @@ class QueryContainer extends Component {
     // console.log(this.props)
     return (
         <div>
-          <nav
+          {/* <nav
             style={{
             borderBottom: "solid 1px",
             paddingBottom: "1rem",
@@ -26,7 +26,7 @@ class QueryContainer extends Component {
             <Link to=""></Link>
             <Link to="/surprises">Get Some Inspiration</Link> |{""}
             <Link to=""></Link>
-            </nav>
+            </nav> */}
 
             <h3>Enter the name of the ingredient or dish you are craving for.</h3>
             <QueryInput fetchRecipe={this.handleQuery} />

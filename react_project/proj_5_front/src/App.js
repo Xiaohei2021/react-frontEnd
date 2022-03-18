@@ -2,7 +2,9 @@ import { Routes, Route, Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import "./App.css"
 import Home from './components/Home';
+import Recipe from './components/recipe/Recipe'
 import RecipeInput from './components/recipe/RecipeInput';
+import RecipeList from './components/recipe/RecipeList';
 import CookBookContainer from './containers/CookBookContainer';
 import QueryContainer from './containers/QueryContainer';
 import SurpriseContainer from './containers/SurpriseContainer';
@@ -35,7 +37,7 @@ function App() {
         Leon's Cook Book
       </h1>
     
-      <h1>What is your tummy yearning for on this fine day?</h1>
+      {/* <h1>What is your tummy yearning for on this fine day?</h1> */}
 {/* 
       <button onClick={handleIndex}>CookBook Index </button><br/><br/> 
       <button onClick={handleCreate}>Create Own Recipe </button><br/><br/>  */}
@@ -45,11 +47,16 @@ function App() {
 
         <Routes>
           <Route path="/home" element={< Home/>} />
-          {/* <Route path="/recipes" element={< CookBookContainer />} >
+
+
+          <Route path="/recipes" element={< CookBookContainer />} >
+            <Route path={"list"} element={< RecipeList/>} />
             <Route path={"new"} element={< RecipeInput />}/>
-            <Route path={":recipeId"} element={<Recipe />} />
-          </Route> */}
-          <Route path="/recipes" element={< CookBookContainer/>} />
+            <Route path={":id"} element={<Recipe />} />
+          </Route>
+
+
+          {/* <Route path="/recipes" element={< CookBookContainer/>} /> */}
           <Route path="/recipes/new" element={< RecipeInput/>} />
           <Route path="/surprises" element={< SurpriseContainer/>} /> 
           <Route path="/query" element={< QueryContainer />} /> 

@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Outlet, Link  } from 'react-router-dom'
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { fetchSavedRecipe } from '../../actions/recipeActions/recipe'
 import Recipe from './Recipe'
@@ -12,20 +12,27 @@ function RecipeList () {
 
   const dispatch = useDispatch();
   const savedRecipe = useSelector(state => state.db.ownRecipe)
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(()=> {
     dispatch(fetchSavedRecipe())
   }, [])
   // console.log(savedRecipe)
 
-  const allRecipes = savedRecipe.map(r => <Recipe key={r.id} recipe={r}/> )
+  // const allRecipes = savedRecipe.map(r => <Recipe key={r.id} recipe={r}/> )
   
-    debugger
+    // debugger
   return (
     <div>
       <h2>RecipeList<br/></h2>
 
+      {savedRecipe.map((recipe) => {
+        return(
+          <div onClick={()=> {navigate(`/recipes/${recipe.id}`)}}>
+            <h2>{recipe.name}</h2>
+          </div>
+        )
+      })}
 
       {/* <nav
         style={{
@@ -41,7 +48,7 @@ function RecipeList () {
           </Link>))}
       </nav> */}
       {/* <Outlet /> */}
-        {allRecipes}
+        {/* {allRecipes} */}
     </div>
   )
 }

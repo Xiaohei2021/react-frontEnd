@@ -14,7 +14,7 @@ class SurpriseContainer extends Component {
   render() {
     return (
         <div>
-          <nav
+          {/* <nav
             style={{
             borderBottom: "solid 1px",
             paddingBottom: "1rem",
@@ -24,7 +24,7 @@ class SurpriseContainer extends Component {
             <Link to=""></Link>
             <Link to="/query">Search for a Specific Recipe</Link> |{""}
             <Link to=""></Link>
-          </nav>
+          </nav> */}
 
             <h3>Lets see which dishes our luck will bring us today.</h3>
             <br/>
