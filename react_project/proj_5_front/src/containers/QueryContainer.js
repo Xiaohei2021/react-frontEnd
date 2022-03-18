@@ -25,7 +25,6 @@ class QueryContainer extends Component {
             <Link to="/recipes">All Recipes</Link> |{""}
             <Link to=""></Link>
             <Link to="/surprises">Get Some Inspiration</Link> |{""}
-            <Link to="/query">Search for a Specific Recipe</Link> |{""}
             <Link to=""></Link>
             </nav>
 

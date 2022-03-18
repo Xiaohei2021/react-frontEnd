@@ -27,7 +27,7 @@ class CookBookContainer extends Component {
             <Link to="list">See All Recipes</Link> |{""}
             {/* <Link to=":recipeId">See a recipeActions</Link> |{""} */}
           </nav>
-          {/* <Outlet/> */}
+          <Outlet/>
           
           {/* <RecipeInput/><hr/> */}
           {/* <RecipeList savedRecipe = {this.props.savedRecipe} /> */}

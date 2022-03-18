@@ -13,7 +13,7 @@ export default function Home() {
         paddingBottom: "1rem",
       }}>
 
-      <Link to="/recipes">All Recipes</Link> |{""}
+      <Link to="/recipes">Recipe Index</Link> |{""}
       <Link to=""></Link>
       <Link to="/surprises">Get Some Inspiration</Link> |{""}
       <Link to="/query">Search for a Specific Recipe</Link> |{""}
