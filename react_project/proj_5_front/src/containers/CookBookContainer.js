@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { Routes, Route, Link } from 'react-router-dom';
+import { Outlet, Link } from 'react-router-dom';
 
-// import Recipe from '../components/recipe/Recipe'
+import Recipe from '../components/recipe/Recipe'
 import { connect } from 'react-redux'
 import { fetchSavedRecipe }from "../actions/recipeActions/recipe"
 import RecipeInput from '../components/recipe/RecipeInput';
@@ -14,18 +14,25 @@ class CookBookContainer extends Component {
     }
 
   render(){
-
     // const allRecipes = this.props.savedRecipe.map(r => <Recipe key={r.id} recipe={r}/> )
-    console.log(this.props)
+    // console.log(this.props)
     return (
       <div>
-          <RecipeInput/><hr/>
-          <RecipeList savedRecipe = {this.props.savedRecipe} />
-          {/* <h1>Its Working</h1> */}
-          {/* {allRecipes} */}
-          {/* <Route path={":recipeId"} element={<Recipe />} /> */}
-          {/* <Outlet/> */}
+
+          <nav style={{
+            borderBottom: "solid 1px",
+            paddingBottom: "1rem",
+          }}>
+            <Link to="new">Create New Recipe</Link> |{""}
+            <Link to=":recipeId">See a recipeActions</Link> |{""}
+          </nav>
+          <Outlet/>
           
+          {/* <RecipeInput/><hr/> */}
+          <RecipeList savedRecipe = {this.props.savedRecipe} />
+          {/* {allRecipes} */}
+          {/* <Outlet/> */}
+       
       </div>)
   }
 }

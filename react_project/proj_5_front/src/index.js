@@ -16,6 +16,7 @@ import QueryContainer from './containers/QueryContainer';
 import RecipeInput from './components/recipe/RecipeInput';
 import Recipe from './components/recipe/Recipe';
 import Home from './components/Home';
+import RecipeList from './components/recipe/RecipeList';
 // import Error from './components/Error';
 
 
@@ -46,20 +47,20 @@ ReactDOM.render(
         <Routes>
 
           <Route path="/" element={ <App />} />
-            <Route path="/home" element={< Home/>} />
+          <Route path="/home" element={< Home/>} />
 
-            <Route path="/surprises" element={< SurpriseContainer/>} >
-              <Route path={":surpriseId"} element={<Recipe />} />
-            </Route> 
+          <Route path="/surprises" element={< SurpriseContainer/>} />
+            {/* <Route path={":surpriseId"} element={<Recipe />} /> */}
+          {/* </Route>  */}
 
-            <Route path="/query" element={< QueryContainer />} />
-              <Route path={":queryId"} element={<Recipe />} >
-            </Route> 
+          <Route path="/query" element={< QueryContainer />} />
+            {/* <Route path={":queryId"} element={<Recipe />} > */}
+          {/* </Route>  */}
 
-            <Route path="/recipes" element={< CookBookContainer />} >
-                <Route path={"new"} element={< RecipeInput />}/>
-                <Route path={":recipeId"} element={<Recipe />} />
-            </Route>
+          <Route path="/recipes" element={< CookBookContainer />} >
+            <Route path={"new"} element={< RecipeInput />}/>
+            <Route path={":recipeId"} element={<Recipe />} />
+          </Route>
 
         </Routes> 
       </BrowserRouter >

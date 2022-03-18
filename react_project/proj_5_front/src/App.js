@@ -1,5 +1,5 @@
 import { Routes, Route, Link } from 'react-router-dom';
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./App.css"
 
 
@@ -10,15 +10,19 @@ import "./App.css"
 
 
 function App() {
-  // let navigate = useNavigate();
+  let navigate = useNavigate();
   
-  // function handleCreate(){
-  //   navigate("/recipes/new");
-  // }
+  function handleCreate(){
+    navigate("/recipes/new");
+  }
 
   // function handleRecipes(){
   //   navigate("/recipes")
   // }
+
+  function handleIndex(){
+    navigate("/home")
+  }
 
   return (
     <div className='header'>
@@ -26,7 +30,11 @@ function App() {
         Leon's Cook Book
       </h1>
     
-      <h1>What is your tummy yearning for this fine day?</h1>
+      <h1>What is your tummy yearning for on this fine day?</h1>
+
+      <button onClick={handleIndex}>CookBook Index </button><br/><br/> 
+      <button onClick={handleCreate}>Create Own Recipe </button><br/><br/> 
+      {/* <button onClick={handleRecipes}>See All the Recipes</button>    */}
 
         {/* <Navbar /> */}
 
@@ -42,9 +50,7 @@ function App() {
           <Route path="/query" element={< QueryContainer />} />  */}
           {/* <Route path="*" element={<Error />} /> */}
         {/* </Routes>  */}
-
- {/* <button onClick={handleCreate}>Create Recipe </button><br/><br/> 
-      <button onClick={handleRecipes}>See Recipes</button>    */}
+  
 
     </div>
   );

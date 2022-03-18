@@ -1,10 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-
 // import Navbar from '../Navbar';
-
-
-
 
 export default function Home() {
   return (
@@ -17,7 +13,6 @@ export default function Home() {
         paddingBottom: "1rem",
       }}>
 
-      <Link to="/home">Home</Link> |{""}
       <Link to="/recipes">All Recipes</Link> |{""}
       <Link to=""></Link>
       <Link to="/surprises">Get Some Inspiration</Link> |{""}
