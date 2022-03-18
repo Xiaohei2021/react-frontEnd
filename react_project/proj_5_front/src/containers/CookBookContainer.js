@@ -24,14 +24,14 @@ class CookBookContainer extends Component {
             paddingBottom: "1rem",
           }}>
             <Link to="new">Create New Recipe</Link> |{""}
-            <Link to=":recipeId">See a recipeActions</Link> |{""}
+            <Link to="list">See All Recipes</Link> |{""}
+            {/* <Link to=":recipeId">See a recipeActions</Link> |{""} */}
           </nav>
-          <Outlet/>
+          {/* <Outlet/> */}
           
           {/* <RecipeInput/><hr/> */}
-          <RecipeList savedRecipe = {this.props.savedRecipe} />
+          {/* <RecipeList savedRecipe = {this.props.savedRecipe} /> */}
           {/* {allRecipes} */}
-          {/* <Outlet/> */}
        
       </div>)
   }

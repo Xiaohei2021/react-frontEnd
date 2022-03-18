@@ -58,6 +58,7 @@ ReactDOM.render(
           {/* </Route>  */}
 
           <Route path="/recipes" element={< CookBookContainer />} >
+            <Route path={"list"} element={< RecipeList />}/>
             <Route path={"new"} element={< RecipeInput />}/>
             <Route path={":recipeId"} element={<Recipe />} />
           </Route>
