@@ -20,20 +20,12 @@ function RecipeList () {
   // console.log(savedRecipe)
 
   // const allRecipes = savedRecipe.map(r => <Recipe key={r.id} recipe={r}/> )
-  console.log({recipeDB})
+  // console.log({recipeDB})
 
     // debugger
   return (
     <div>
       <h2>RecipeList<br/></h2>
-
-      {/* {savedRecipe.map((recipe) => {
-        return(
-          <div onClick={()=> {navigate(`/recipes/${recipe.id}`)}}>
-            <h2>{recipe.name}</h2>
-          </div>
-        )
-      })} */}
 
       <nav
         style={{

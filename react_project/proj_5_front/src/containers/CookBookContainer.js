@@ -59,6 +59,7 @@ import { fetchSavedRecipe }from "../actions/recipeActions/recipe"
 
   const dispatch = useDispatch();
   const recipeDB = useSelector(state => state.db.ownRecipe)
+ 
 
   useEffect( ()=> {
     dispatch( fetchSavedRecipe() )}, [])
@@ -70,13 +71,14 @@ import { fetchSavedRecipe }from "../actions/recipeActions/recipe"
             paddingBottom: "1rem",
           }}>
             <Link to="/home">Home</Link> |{""}
+            <Link to="/recipes">Recipe Index</Link> |{""}
             <Link to="new">Create New Recipe</Link> |{""}
             <Link to="list">See All Recipes</Link> |{""}
           </nav>
          {/* { recipeDB.map(r => <li key={r.id} recipe={r}>{r.name}</li>)}  */}
           <Outlet context={ recipeDB }/> 
 
-          <h1>container</h1>
+
       </div>)
   }
 // export default connect(mapStateToProps, mapDispatchToProps)(CookBookContainer)

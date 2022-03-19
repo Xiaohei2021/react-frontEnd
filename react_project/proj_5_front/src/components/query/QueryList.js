@@ -26,3 +26,4 @@ export default class QueryList extends Component {
     )
   }
 }
+// recipeDB.map(r=>{return(Object.fromEntries(Object.entries(r).filter(([key]) => key.includes('id'))))})

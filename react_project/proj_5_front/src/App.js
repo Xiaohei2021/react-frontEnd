@@ -1,5 +1,5 @@
 import { Routes, Route, Link } from 'react-router-dom';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams  } from "react-router-dom";
 import "./App.css"
 import Home from './components/Home';
 import Recipe from './components/recipe/Recipe'
