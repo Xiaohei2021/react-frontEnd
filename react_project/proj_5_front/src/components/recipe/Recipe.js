@@ -34,7 +34,9 @@ import { useNavigate } from "react-router-dom";
   const dispatch = useDispatch();
   // console.log(rec)
 
-  
+  const handleClick = (e) => {
+    dispatch(deleteRecipe(parseInt(id), navigate))
+  }
 
   // debugger
   return (
@@ -45,7 +47,7 @@ import { useNavigate } from "react-router-dom";
       <h1>cooking_Instructions:</h1> {rec.cooking_Instructions}
       {/* {props.recipe.ingredient}  */}
       {/* {props.recipe.cooking_Instructions} */}
-      <button onClick={ ()=> dispatch(deleteRecipe(parseInt(id)))}>Delete</button>
+      <button onClick={ e => handleClick(e)}>Delete</button>
 
     </div>
   )

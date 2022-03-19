@@ -80,12 +80,12 @@ export const saveTheRecipe = (APIData) =>{
     }
 }
 
-export const deleteRecipe = id =>{
+export const deleteRecipe = (id, navigate) =>{
     return dispatch => {
         fetch(`http://localhost:3000/recipes/${id}`, {
             method: "DELETE"
         })
-        .then(r=> dispatch(deleteOwnRecipe(id)))
+        .then(r=> dispatch(deleteOwnRecipe(id)),navigate("/recipes/list") )
             
     }
 }
