@@ -71,7 +71,6 @@ import { fetchSavedRecipe }from "../actions/recipeActions/recipe"
             paddingBottom: "1rem",
           }}>
             <Link to="/home">Home</Link> |{""}
-            <Link to="/recipes">Recipe Index</Link> |{""}
             <Link to="new">Create New Recipe</Link> |{""}
             <Link to="list">See All Recipes</Link> |{""}
           </nav>
