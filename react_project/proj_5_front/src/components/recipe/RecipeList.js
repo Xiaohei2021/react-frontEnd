@@ -1,54 +1,54 @@
 import React from 'react'
-import { useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { Outlet, Link  } from 'react-router-dom'
-import { useNavigate } from "react-router-dom";
-
-import { fetchSavedRecipe } from '../../actions/recipeActions/recipe'
-import Recipe from './Recipe'
+// import { useEffect } from 'react'
+// import { useSelector, useDispatch } from 'react-redux'
+import { useOutletContext, Link  } from 'react-router-dom'
+// import { useNavigate } from "react-router-dom";
+// import { fetchSavedRecipe } from '../../actions/recipeActions/recipe'
+// import Recipe from './Recipe'
 
 
 function RecipeList () {
 
-  const dispatch = useDispatch();
-  const savedRecipe = useSelector(state => state.db.ownRecipe)
-  const navigate = useNavigate();
+  // const dispatch = useDispatch();
+  // const savedRecipe = useSelector(state => state.db.ownRecipe)
+  // const navigate = useNavigate();
+  const recipeDB = useOutletContext();
 
-  useEffect(()=> {
-    dispatch(fetchSavedRecipe())
-  }, [])
+  // useEffect(()=> {
+  //   dispatch(fetchSavedRecipe())
+  // }, [])
   // console.log(savedRecipe)
 
   // const allRecipes = savedRecipe.map(r => <Recipe key={r.id} recipe={r}/> )
-  
+  console.log({recipeDB})
+
     // debugger
   return (
     <div>
       <h2>RecipeList<br/></h2>
 
-      {savedRecipe.map((recipe) => {
+      {/* {savedRecipe.map((recipe) => {
         return(
           <div onClick={()=> {navigate(`/recipes/${recipe.id}`)}}>
             <h2>{recipe.name}</h2>
           </div>
         )
-      })}
+      })} */}
 
-      {/* <nav
+      <nav
         style={{
           borderRight: "solid 1px",
           padding: "1rem",}}
       >
-        {savedRecipe.map((recipe) => (
+        {recipeDB.map((recipe) => (
           <Link
             style={{ display: "block", margin: "1rem 0" }}
-            to={`/recipes/list/${recipe.id}`}
+            to={`/recipes/${recipe.id}`}
             key={recipe.id}
+            // onClick ={() => navigate(`/recipes/${recipe.id}`)}
           >{recipe.name} 
           </Link>))}
-      </nav> */}
-      {/* <Outlet /> */}
-        {/* {allRecipes} */}
+      </nav>
     </div>
   )
 }
