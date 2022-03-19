@@ -29,15 +29,15 @@ import { useOutletContext  } from 'react-router-dom'
   // const ingredients = Object.fromEntries(Object.entries(recipe).filter(([key]) => key.includes('strIngredient')))
 
   const dispatch = useDispatch();
-  console.log(rec)
+  // console.log(rec)
 
   // debugger
   return (
     <div>
-      <h1>Recipe#:{id}</h1>
-      <h1>Name:{rec.name}</h1>  
-      <h1>Ingredient:{rec.ingredient}</h1>
-      <h1>cooking_Instructions: {rec.cooking_Instructions}</h1>
+      <h1>Recipe#:</h1>{id}
+      <h1>Name:</h1> {rec.name} 
+      <h1>Ingredient:</h1>{rec.ingredient}
+      <h1>cooking_Instructions:</h1> {rec.cooking_Instructions}
       {/* {props.recipe.ingredient}  */}
       {/* {props.recipe.cooking_Instructions} */}
       <button onClick={ ()=> dispatch(deleteRecipe(parseInt(id)))}>Delete</button>

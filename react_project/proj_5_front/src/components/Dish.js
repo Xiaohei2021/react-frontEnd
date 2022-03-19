@@ -5,15 +5,13 @@ import { connect } from 'react-redux'
 class Dish extends Component {
 
   handleSave = () => {
-    
-    // debugger
     const data = {
       name: this.props.dish.strMeal,
       ingredients: this.props.ingredients,
       cooking_Instructions: this.props.dish.strInstructions
     }
-
     this.props.saveTheRecipe(data)
+    // debugger
   }
 
   render() {
