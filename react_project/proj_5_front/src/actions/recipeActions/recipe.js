@@ -1,3 +1,4 @@
+import { Navigate } from "react-router-dom"
 import { GET_SAVED_RECIPE, CREATE_RECIPE, SAVE_RECIPE, DELETE_RECIPE } from "../actionTypes"
 
 const getRecipe = (savedRecipe) => {
@@ -37,7 +38,7 @@ export const fetchSavedRecipe = () => {
     }
 }
 
-export const createOwnRecipe = (formInput) =>{
+export const createOwnRecipe = (formInput, navigate) =>{
     return dispatch => {
         fetch("http://localhost:3000/recipes", {
             "method": "POST",
@@ -49,7 +50,9 @@ export const createOwnRecipe = (formInput) =>{
         })
         .then(r=>{
             if(r.ok){
-                r.json().then(newRecipe => dispatch(createRecipe(newRecipe)))
+                r.json().then(newRecipe => 
+                    dispatch(createRecipe(newRecipe)),
+                    navigate("/recipes/list") )
             }else{
                 r.json().then(err => console.error(err))
             }

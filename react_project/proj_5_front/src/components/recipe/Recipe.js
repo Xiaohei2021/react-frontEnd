@@ -4,6 +4,8 @@ import { deleteRecipe } from '../../actions/recipeActions/recipe'
 import { useParams } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { useOutletContext  } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
+
 
 // class Recipe extends React.Component {
 //   render() {
@@ -24,11 +26,15 @@ import { useOutletContext  } from 'react-router-dom'
   const recipeDB = useOutletContext();
   const { id } = useParams();
   const rec = recipeDB.find(r => r.id === parseInt(id)) 
+  const navigate = useNavigate();
+
   // const rec = recipeDB.find(r => {debugger}) 
 
   // const ingredients = Object.fromEntries(Object.entries(recipe).filter(([key]) => key.includes('strIngredient')))
   const dispatch = useDispatch();
   // console.log(rec)
+
+  
 
   // debugger
   return (

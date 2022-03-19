@@ -25,17 +25,18 @@ function RecipeInput() {
     //     this.setData({[e.target.name]: e.target.value})
     // }
     const handleSubmit = (e) => {
-        // dispatch(createOwnRecipe([name, ingredient, cooking_Instructions]))
-        dispatch(createOwnRecipe({name:name, ingredeint: ingredient, cooking_Instructions:cooking_Instructions}))
-
         e.preventDefault();
+        // dispatch(createOwnRecipe([name, ingredient, cooking_Instructions]))
+        dispatch(createOwnRecipe({name:name, ingredient: ingredient, cooking_Instructions:cooking_Instructions}, navigate))
+        setName("");
+        setIngredient("");
+        setCooking_Instructions("");
         // this.setState({ 
         //     name:"",
         //     ingredient: "",
         //     cooking_Instructions: ""
         // })
     }
-
 
     return (
       <div>
