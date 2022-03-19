@@ -3,21 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Routes, Route   } from "react-router-dom"
+import { BrowserRouter} from "react-router-dom"
 import { Provider } from "react-redux";
 import store from "./store";
-
-
-
-// import Home from './components/Home';
-import CookBookContainer from './containers/CookBookContainer';
-import SurpriseContainer from './containers/SurpriseContainer';
-import QueryContainer from './containers/QueryContainer';
-import RecipeInput from './components/recipe/RecipeInput';
-import Recipe from './components/recipe/Recipe';
-import Home from './components/Home';
-import RecipeList from './components/recipe/RecipeList';
-// import Error from './components/Error';
 
 
 // ReactDOM.render(

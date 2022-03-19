@@ -27,7 +27,6 @@ import { useOutletContext  } from 'react-router-dom'
   // const rec = recipeDB.find(r => {debugger}) 
 
   // const ingredients = Object.fromEntries(Object.entries(recipe).filter(([key]) => key.includes('strIngredient')))
-
   const dispatch = useDispatch();
   // console.log(rec)
 

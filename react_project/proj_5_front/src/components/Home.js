@@ -19,12 +19,11 @@ export default function Home() {
   return (
     <div>
       {/* <Navbar /> */}
-      <h1>What is your tummy yearning for on this fine day?</h1>
+      {/* <h1>What is your tummy yearning for on this fine day?</h1> */}
 
-      <button onClick={handleIndex}>CookBook Index </button><br/><br/> 
-      <button onClick={handleCreate}>Create Own Recipe </button><br/><br/>
-
-      <nav
+      <p>Click this buttont to <button onClick={handleIndex}>See The Recipe Index </button><br/><br/> </p>
+      <p>Click this button to <button onClick={handleCreate}>Create Own Recipe </button><br/></p>
+      {/* <nav
       style={{
         paddingBottom: "1rem",
       }}>
@@ -34,7 +33,7 @@ export default function Home() {
       <Link to="/surprises">Get Some Inspiration</Link> |{""}
       <Link to="/query">Search for a Specific Recipe</Link> |{""}
       <Link to=""></Link>
-    </nav>
+    </nav> */}
     </div>
   )
 }

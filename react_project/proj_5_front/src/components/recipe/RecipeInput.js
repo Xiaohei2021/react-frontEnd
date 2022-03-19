@@ -1,59 +1,67 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React from 'react'
+// import { connect } from 'react-redux'
 import { createOwnRecipe } from '../../actions/recipeActions/recipe'
+import { useNavigate } from "react-router-dom";
+import {useState} from "react";
+import { useDispatch } from 'react-redux';
 
 
 
-class RecipeInput extends Component {
+function RecipeInput() {
 
-    state={
-        name:"",
-        ingredient: "",
-        cooking_Instructions: ""
-    }
+    const [name, setName] = useState("");
+    const [ingredient, setIngredient] = useState("");
+    const [cooking_Instructions, setCooking_Instructions] = useState("");
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
-    handleChange = (e) => {
-        this.setState({[e.target.name]: e.target.value})
-    }
+    // state={
+    //     name:"",
+    //     ingredient: "",
+    //     cooking_Instructions: ""
+    // }
 
-    handleSubmit = (e) => {
+    // function handleChange = (e) => {
+    //     this.setData({[e.target.name]: e.target.value})
+    // }
+    const handleSubmit = (e) => {
+        // dispatch(createOwnRecipe([name, ingredient, cooking_Instructions]))
+        dispatch(createOwnRecipe({name:name, ingredeint: ingredient, cooking_Instructions:cooking_Instructions}))
+
         e.preventDefault();
-        this.props.createOwnRecipe(this.state)
-        this.setState({ 
-            name:"",
-            ingredient: "",
-            cooking_Instructions: ""
-        })
+        // this.setState({ 
+        //     name:"",
+        //     ingredient: "",
+        //     cooking_Instructions: ""
+        // })
     }
-
-  render() {
 
 
     return (
       <div>
           <h4>Please enter the recipe information below</h4>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={ e => handleSubmit(e)}>
             <input 
                 type="text" 
                 placeholder='Enter the recipe ingredient' 
                 name="name"
-                value={this.state.name}
-                onChange={this.handleChange}
+                value={name}
+                onChange={ e => setName(e.target.value)}
             />
             <input 
                 type="text" 
                 placeholder='Enter the recipe ingredient'
                 name="ingredient"
-                value={this.state.ingredient}
-                onChange={this.handleChange}
+                value={ingredient}
+                onChange={e=> setIngredient(e.target.value)}
 
             />
             <input 
                 type="textarea" 
                 placeholder='Enter the recipe instructions'
                 name="cooking_Instructions"
-                value={this.state.cooking_Instructions}
-                onChange={this.handleChange}
+                value={cooking_Instructions}
+                onChange={e=> setCooking_Instructions(e.target.value)}
             />
             <input type="submit"/>
         </form>
@@ -61,6 +69,7 @@ class RecipeInput extends Component {
     </div>
     )
   }
-}
 
-export default connect(null, { createOwnRecipe })(RecipeInput)
+
+// export default connect(null, { createOwnRecipe })(RecipeInput)
+export default RecipeInput
