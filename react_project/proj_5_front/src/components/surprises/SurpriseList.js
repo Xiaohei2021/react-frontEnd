@@ -36,7 +36,7 @@ import Dish from './Dish'
 function SurpriseList() {
 
   const surpriseDB = useOutletContext();
-  console.log(surpriseDB)
+  // console.log(surpriseDB)
   return (
     <div>
       
@@ -51,7 +51,7 @@ function SurpriseList() {
           <li>
             <Link
               style={{ display: "block", margin: "1rem 0" }}
-              to={`/surprises/${surprise.id}`}
+              to={`/surprises/${surprise.idMeal}`}
               key={surprise.idMeal}
             >
               {surprise.strMeal} 
