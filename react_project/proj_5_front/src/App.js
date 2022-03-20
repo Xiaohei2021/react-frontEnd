@@ -1,5 +1,8 @@
 import { Routes, Route, Link } from 'react-router-dom';
-import { useNavigate, useParams  } from "react-router-dom";
+// import { useNavigate, useParams  } from "react-router-dom";
+// import Error from './components/Error';
+// import Navbar from './Navbar';
+
 import "./App.css"
 import Home from './components/Home';
 import Recipe from './components/recipe/Recipe'
@@ -8,8 +11,10 @@ import RecipeList from './components/recipe/RecipeList';
 import CookBookContainer from './containers/CookBookContainer';
 import QueryContainer from './containers/QueryContainer';
 import SurpriseContainer from './containers/SurpriseContainer';
-// import Error from './components/Error';
-import Navbar from './Navbar';
+import SurpriseList from './components/surprises/SurpriseList'
+import Dish from './components/surprises/Dish';
+import QueryList from './components/query/QueryList';
+import QueryDish from './components/query/QueryDish'
 
 function App() {
   
@@ -26,7 +31,6 @@ function App() {
   return (
     <div className='header'>
         {/* <Navbar /> */}
-
 
         <nav style={{
             borderBottom: "solid 1px",
@@ -45,10 +49,15 @@ function App() {
             <Route path={"new"} element={< RecipeInput />}/>
             <Route path={":id"} element={<Recipe />} />
           </Route>
-          {/* <Route path="/recipes" element={< CookBookContainer/>} /> */}
-          {/* <Route path="/recipes/new" element={< RecipeInput/>} /> */}
-          <Route path="/surprises" element={< SurpriseContainer/>} /> 
-          <Route path="/query" element={< QueryContainer />} /> 
+         
+          <Route path="/surprises" element={< SurpriseContainer/>} >
+            <Route path={"list"} element={< SurpriseList/>} />
+            <Route path={":id"} element={<Dish />} /> 
+          </Route>
+          <Route path="/query" element={< QueryContainer />} >
+            <Route path={"list"} element={< QueryList/>} />
+            <Route path={":id"} element={< QueryDish/>} /> 
+          </Route> 
         </Routes> 
   
       {/* <h1>What is your tummy yearning for on this fine day?</h1> 
