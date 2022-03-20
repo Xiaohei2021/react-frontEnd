@@ -7,7 +7,9 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Outlet, Link } from 'react-router-dom';
 import { useEffect } from 'react'
 import React from 'react'
+import { useNavigate } from "react-router-dom";
 
+import {useState} from "react";
 
 // class QueryContainer extends Component {
 //  handleQuery=(query)=>{
@@ -46,23 +48,45 @@ import React from 'react'
  function QueryContainer() {
 
   // const dispatch = useDispatch();
-  // const QueryDB = useSelector(state => state.query.queryResult)
+  const queryDB = useSelector(state => state.query.queryResult)
   
   // useEffect( ()=> {
   //   dispatch( fetchRecipe() )}, [])
 
+  const [query, setQuery] = useState("");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // debugger
+    dispatch(fetchRecipe(query))
+    setQuery("")
+
+    console.log(queryDB)
+  }
+
   return (
-    <div>
+    <div> 
+      <h5>Which dish do you have in mind for today?</h5>
+
+      <form onSubmit={e => handleSubmit(e)}>
+        <input 
+          type="text" 
+          placeholder="Enter the name of the dish"
+          value = {query}
+          onChange={e => setQuery(e.target.value)}   
+        />
+        <input type="submit" />
+      </form>
+
       <nav style={{
             // borderBottom: "solid 1px",
             paddingBottom: "1rem",
           }}>
-            <Link to="home">Home</Link> |{""}
-            <Link to="list">See All Recipes</Link> |{""}
             <Link to="search">Search for a Recipe</Link> |{""}
-
-          </nav>
-         {/* { recipeDB.map(r => <li key={r.id} recipe={r}>{r.name}</li>)}  */}
+            <Link to="list">See All Recipes</Link> |{""}
+      </nav>
           <Outlet /*context={ QueryDB }*/ /> 
 
 

@@ -69,7 +69,6 @@ export default function SurpriseContainer() {
             borderBottom: "solid 1px",
             paddingBottom: "1rem",
           }}>
-            <Link to="/home">Home</Link> |{""}
             <Link to="list">See All Recipes</Link> |{""}
           </nav>
          {/* {/* { recipeDB.map(r => <li key={r.id} recipe={r}>{r.name}</li>)}  */}

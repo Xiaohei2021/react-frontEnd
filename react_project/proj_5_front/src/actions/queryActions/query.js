@@ -18,8 +18,8 @@ export const fetchRecipe = (query, navigate) => {
         })
         .then(r=>{
             if(r.ok){
-                // r.json().then(result => dispatch(getResult(result)) , navigate("/query/list"))
-                r.json().then(result => console.log(result))
+                r.json().then(result => dispatch(getResult(result)) , /*navigate("/query/list")*/)
+                // r.json().then(result => console.log(result))
 
             }else{
                 r.json().then(err => console.error(err))
