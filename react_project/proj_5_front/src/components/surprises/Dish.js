@@ -17,15 +17,13 @@ class Dish extends Component {
   render() {
     return (
       <div>
-        <div className='card'>
+    
           <h4>{this.props.dish.strMeal}</h4>
           <img src={this.props.dish.strMealThumb} alt={this.props.dish.strMeal}/><br/>
           {this.props.ingredients}<br/> 
           {this.props.dish.strInstructions}<br/>
           <button onClick={this.handleSave}>Save Recipe</button><hr/>
         {/* {ingredient}  */}
-
-        </div>
        
         {/* {console.log(this.state)} */}
         {/* {data} */}
