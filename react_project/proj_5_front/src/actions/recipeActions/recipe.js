@@ -59,7 +59,7 @@ export const createOwnRecipe = (formInput, navigate) =>{
     }
 }
 
-export const saveTheRecipe = (APIData) =>{
+export const saveTheRecipe = (APIData, navigate) =>{
     return dispatch => {
         fetch("http://localhost:3000/recipes", {
             "method": "POST",
@@ -71,7 +71,7 @@ export const saveTheRecipe = (APIData) =>{
         })
         .then(r=>{
             if(r.ok){
-                r.json().then(targetRecipe => dispatch(absorbRecipe(targetRecipe)))
+                r.json().then(targetRecipe => dispatch(absorbRecipe(targetRecipe)),  navigate("/recipes/list"))
             }else{
                 r.json().then(err => console.error(err))
             }

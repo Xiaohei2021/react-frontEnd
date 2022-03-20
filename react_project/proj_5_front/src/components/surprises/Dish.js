@@ -54,12 +54,12 @@ function Dish() {
   const filteredIngredients = data.filter(i => i.length && i!== null).join(",")
 
   const handleClick = (e) => {
-    dispatch(saveTheRecipe())
+    dispatch(saveTheRecipe({name:surprise.strMeal, ingredient: filteredIngredients, cooking_Instructions:surprise.strInstructions}, navigate))
   }
   // const surprise = surpriseDB.find(r => {debugger}) 
 
   // console.log(surprise)
-  console.log(data)
+  // console.log(data)
   return (
     <div className='card'>
       <h5>Recipe#: {id}</h5>
