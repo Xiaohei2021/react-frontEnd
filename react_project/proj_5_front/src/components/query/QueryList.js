@@ -31,8 +31,31 @@ import { useOutletContext, Link  } from 'react-router-dom'
  import React from 'react'
  
  export default function QueryList() {
+   
+  const queryDB = useOutletContext();
+
    return (
-     <div>QueryList</div>
+     <div>
+      <ol>
+        <nav
+          style={{
+            borderRight: "solid 1px",
+            padding: "1rem",}}
+        >
+          {queryDB.map((query, index) => (
+            <li key={query.strMeal}>
+              <Link
+                style={{ display: "block", margin: "1rem 0" }}
+                to={`/query/${query.idMeal}`}
+                key={index}
+              >
+                {query.strMeal} 
+              </Link>
+            </li>))
+          }
+        </nav>
+     </ol>
+    </div>
    )
  }
  

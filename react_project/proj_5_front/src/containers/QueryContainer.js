@@ -62,6 +62,7 @@ import {useState} from "react";
     // debugger
     dispatch(fetchRecipe(query))
     setQuery("")
+    navigate("/query/list")
 
     // console.log(queryDB)
   }
@@ -87,28 +88,6 @@ import {useState} from "react";
             <Link to="search">Search for a Recipe</Link> |{""}
             <Link to="list">See All Recipes</Link> |{""}
       </nav> */}
-
-      <ol>
-      <nav
-        style={{
-          borderRight: "solid 1px",
-          padding: "1rem",}}
-      >
-        {queryDB.map((query, index) => (
-          <li key={query.strMeal}>
-            <Link
-              style={{ display: "block", margin: "1rem 0" }}
-              to={`/query/${query.idMeal}`}
-              key={index}
-            >
-              {query.strMeal} 
-            </Link>
-          </li>))
-        }
-      </nav>
-      </ol>
-
-
           <Outlet context={ queryDB } /> 
 
 
