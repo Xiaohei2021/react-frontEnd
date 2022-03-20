@@ -15,6 +15,7 @@ import SurpriseList from './components/surprises/SurpriseList'
 import Dish from './components/surprises/Dish';
 import QueryList from './components/query/QueryList';
 import QueryDish from './components/query/QueryDish'
+import QueryInput from './components/query/QueryInput';
 
 function App() {
   
@@ -55,6 +56,7 @@ function App() {
             <Route path={":id"} element={<Dish />} /> 
           </Route>
           <Route path="/query" element={< QueryContainer />} >
+            <Route path={"search"} element={< QueryInput/>} /> 
             <Route path={"list"} element={< QueryList/>} />
             <Route path={":id"} element={< QueryDish/>} /> 
           </Route> 

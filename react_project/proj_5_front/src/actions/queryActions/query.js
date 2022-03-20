@@ -8,7 +8,7 @@ const getResult = (result) => {
 }
 
 
-export const fetchRecipe = (query) => {
+export const fetchRecipe = (query, navigate) => {
     return (dispatch) => {
         fetch(`https://themealdb.p.rapidapi.com/search.php?s=${query}`, {
         "method": "GET",
@@ -18,7 +18,9 @@ export const fetchRecipe = (query) => {
         })
         .then(r=>{
             if(r.ok){
-                r.json().then(result => dispatch(getResult(result) ))
+                // r.json().then(result => dispatch(getResult(result)) , navigate("/query/list"))
+                r.json().then(result => console.log(result))
+
             }else{
                 r.json().then(err => console.error(err))
             }

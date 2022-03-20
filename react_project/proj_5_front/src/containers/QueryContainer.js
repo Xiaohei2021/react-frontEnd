@@ -45,11 +45,11 @@ import React from 'react'
 
  function QueryContainer() {
 
-  const dispatch = useDispatch();
-  const QueryDB = useSelector(state => state.query.queryResult)
+  // const dispatch = useDispatch();
+  // const QueryDB = useSelector(state => state.query.queryResult)
   
-  useEffect( ()=> {
-    dispatch( fetchRecipe() )}, [])
+  // useEffect( ()=> {
+  //   dispatch( fetchRecipe() )}, [])
 
   return (
     <div>
@@ -59,11 +59,11 @@ import React from 'react'
           }}>
             <Link to="home">Home</Link> |{""}
             <Link to="list">See All Recipes</Link> |{""}
-            <Link to="list">See All Recipes</Link> |{""}
+            <Link to="search">Search for a Recipe</Link> |{""}
 
           </nav>
          {/* { recipeDB.map(r => <li key={r.id} recipe={r}>{r.name}</li>)}  */}
-          <Outlet context={ QueryDB }/> 
+          <Outlet /*context={ QueryDB }*/ /> 
 
 
     </div>

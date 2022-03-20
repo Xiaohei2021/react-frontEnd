@@ -3,6 +3,7 @@
 import React from 'react'
 import {useState} from "react";
 import { useDispatch } from 'react-redux';
+import { useNavigate } from "react-router-dom";
 import { fetchRecipe } from '../../actions/queryActions/query';
 
 // export default class QueryInput extends Component {
@@ -40,13 +41,14 @@ function QueryInput() {
 
   const [query, setQuery] = useState("");
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(fetchRecipe({query:query}))
-    setQuery("");
+    // debugger
+    dispatch(fetchRecipe(query), navigate)
+    setQuery("")
   }
-
 
   return (
     <div>
