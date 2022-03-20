@@ -27,7 +27,7 @@ import {useState} from "react";
 //             <Link to="/home">Home</Link> |{""}
 //             <Link to="/recipes">Recipe Index</Link> |{""}
 //             <Link to=""></Link>
-//             <Link to="/surprises">Get Some Inspiration</Link> |{""}
+//             <Link to="/querys">Get Some Inspiration</Link> |{""}
 //             <Link to=""></Link>
 //             </nav> */}
 //             <h3>Enter the name of the ingredient or dish you are craving for.</h3>
@@ -80,13 +80,35 @@ import {useState} from "react";
         <input type="submit" />
       </form>
 
-      <nav style={{
+      {/* <nav style={{
             // borderBottom: "solid 1px",
             paddingBottom: "1rem",
           }}>
             <Link to="search">Search for a Recipe</Link> |{""}
             <Link to="list">See All Recipes</Link> |{""}
+      </nav> */}
+
+      <ol>
+      <nav
+        style={{
+          borderRight: "solid 1px",
+          padding: "1rem",}}
+      >
+        {queryDB.map((query, index) => (
+          <li key={query.strMeal}>
+            <Link
+              style={{ display: "block", margin: "1rem 0" }}
+              to={`/query/${query.idMeal}`}
+              key={index}
+            >
+              {query.strMeal} 
+            </Link>
+          </li>))
+        }
       </nav>
+      </ol>
+
+
           <Outlet /*context={ QueryDB }*/ /> 
 
 
