@@ -67,10 +67,9 @@ import { fetchSavedRecipe }from "../actions/recipeActions/recipe"
     return (
       <div>
           <nav style={{
-            borderBottom: "solid 1px",
+            // borderBottom: "solid 1px",
             paddingBottom: "1rem",
           }}>
-            <Link to="/home">Home</Link> |{""}
             <Link to="new">Create New Recipe</Link> |{""}
             <Link to="list">See All Recipes</Link> |{""}
           </nav>

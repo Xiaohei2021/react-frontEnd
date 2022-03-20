@@ -56,7 +56,7 @@ function App() {
           </Route>
           <Route path="/query" element={< QueryContainer />} >
             <Route path={"list"} element={< QueryList/>} />
-            {/* <Route path={":id"} element={< QueryDish/>} />  */}
+            <Route path={":id"} element={< QueryDish/>} /> 
           </Route> 
         </Routes> 
   
