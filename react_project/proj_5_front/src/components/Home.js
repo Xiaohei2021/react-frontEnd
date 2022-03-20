@@ -13,7 +13,7 @@ export default function Home() {
   }
 
   function handleIndex(){
-    navigate("/home")
+    navigate("/recipes")
   }
 
   return (

@@ -50,17 +50,21 @@ import { useEffect } from 'react'
 
 export default function SurpriseContainer() {
   const dispatch = useDispatch();
-  const surpriseDB = useSelector(state => state.db.randomRecipes)
+  const surpriseDB = useSelector(state => state.surprise.randomRecipes)
  
 
   useEffect( ()=> {
     dispatch( fetchSurprise() )}, [])
 
-    
   // debugger
+  // console.log(surpriseDB)
 
   return (
     <div>
+
+      {/* {surpriseDB.map(s => {})} */}
+
+
       <nav style={{
             borderBottom: "solid 1px",
             paddingBottom: "1rem",
@@ -68,8 +72,8 @@ export default function SurpriseContainer() {
             <Link to="/home">Home</Link> |{""}
             <Link to="list">See All Recipes</Link> |{""}
           </nav>
-         {/* { recipeDB.map(r => <li key={r.id} recipe={r}>{r.name}</li>)}  */}
-          <Outlet context={ surpriseDB }/> 
+         {/* {/* { recipeDB.map(r => <li key={r.id} recipe={r}>{r.name}</li>)}  */}
+          <Outlet context={ surpriseDB }/>  
     </div>
   )
 }
