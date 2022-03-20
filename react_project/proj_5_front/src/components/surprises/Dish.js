@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { saveTheRecipe } from '../actions/recipeActions/recipe'
+import { saveTheRecipe } from '../../actions/recipeActions/recipe'
 import { connect } from 'react-redux'
 
 class Dish extends Component {
@@ -17,12 +17,16 @@ class Dish extends Component {
   render() {
     return (
       <div>
-        <h4>{this.props.dish.strMeal}</h4>
-        <img src={this.props.dish.strMealThumb} alt={this.props.dish.strMeal}/><br/>
-        {this.props.ingredients}<br/> 
-        {this.props.dish.strInstructions}<br/>
-        <button onClick={this.handleSave}>Save Recipe</button><hr/>
+        <div className='card'>
+          <h4>{this.props.dish.strMeal}</h4>
+          <img src={this.props.dish.strMealThumb} alt={this.props.dish.strMeal}/><br/>
+          {this.props.ingredients}<br/> 
+          {this.props.dish.strInstructions}<br/>
+          <button onClick={this.handleSave}>Save Recipe</button><hr/>
         {/* {ingredient}  */}
+
+        </div>
+       
         {/* {console.log(this.state)} */}
         {/* {data} */}
 

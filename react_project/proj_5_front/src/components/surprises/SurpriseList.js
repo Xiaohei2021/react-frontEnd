@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Dish from '../Dish'
+import Dish from './Dish'
 
 export default class SurpriseList extends Component {
   render() {
@@ -12,12 +12,12 @@ export default class SurpriseList extends Component {
 
       const randomdishes =this.props.surprises.map(recipe => {
         return (
-          <Dish key={recipe.idMeal} dish={recipe} link />
+          <Dish key={recipe.idMeal} dish={recipe} />
         )})
 
 
     return (
-      <div>
+      <div className='card'>
         
     
         {randomdishes}  

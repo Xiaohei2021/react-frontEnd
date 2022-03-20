@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Dish from '../Dish'
+import Dish from '../surprises/Dish'
 
 
 export default class QueryList extends Component {

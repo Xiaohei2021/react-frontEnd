@@ -40,7 +40,7 @@ import { useNavigate } from "react-router-dom";
 
   // debugger
   return (
-    <div>
+    <div className='card'>
       <h1>Recipe#:</h1>{id}
       <h1>Name:</h1> {rec.name} 
       <h1>Ingredient:</h1>{rec.ingredient}
