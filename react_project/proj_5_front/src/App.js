@@ -38,9 +38,9 @@ function App() {
             paddingBottom: "1rem",
           }}>
             <Link to="/home">Home</Link> |{""}
-            <Link to="/recipes">All Recipes</Link> |{""}
-            <Link to="/surprises">Get Some Inspiration</Link> |{""}
-            <Link to="/query">Search for a Specific Recipe</Link> |{""}
+            <Link to="/recipes">Sections of Known Recipe </Link> |{""}
+            <Link to="/surprises">Section of random inspiration</Link> |{""}
+            <Link to="/query">Section of specific inquery </Link> |{""}
           </nav>
 
         <Routes>
