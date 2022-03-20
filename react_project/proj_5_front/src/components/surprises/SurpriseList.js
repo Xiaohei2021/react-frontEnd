@@ -41,20 +41,23 @@ function SurpriseList() {
     <div>
       
       <h2>SurpriseList </h2>
-      
+      <ol>
       <nav
         style={{
           borderRight: "solid 1px",
           padding: "1rem",}}
       >
         {surpriseDB.map((surprise) => (
-          <Link
+          <li>
+            <Link
             style={{ display: "block", margin: "1rem 0" }}
             to={`/surprises/${surprise.id}`}
-            key={surprise.id}
-          >{surprise.name} 
-          </Link>))}
+            key={surprise.idMeal}
+          >
+            {surprise.strMeal} 
+          </Link></li>))}
       </nav>
+      </ol>
     </div>
   )
 }
