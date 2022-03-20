@@ -47,12 +47,12 @@ function SurpriseList() {
           borderRight: "solid 1px",
           padding: "1rem",}}
       >
-        {surpriseDB.map((surprise) => (
-          <li>
+        {surpriseDB.map((surprise, index) => (
+          <li key={surprise.strMeal}>
             <Link
               style={{ display: "block", margin: "1rem 0" }}
               to={`/surprises/${surprise.idMeal}`}
-              key={surprise.idMeal}
+              key={index}
             >
               {surprise.strMeal} 
             </Link>
