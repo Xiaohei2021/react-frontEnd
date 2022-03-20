@@ -63,7 +63,7 @@ import {useState} from "react";
     dispatch(fetchRecipe(query))
     setQuery("")
 
-    console.log(queryDB)
+    // console.log(queryDB)
   }
 
   return (
@@ -109,7 +109,7 @@ import {useState} from "react";
       </ol>
 
 
-          <Outlet /*context={ QueryDB }*/ /> 
+          <Outlet context={ queryDB } /> 
 
 
     </div>
