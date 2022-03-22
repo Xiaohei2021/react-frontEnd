@@ -1,4 +1,4 @@
-import { GET_SAVED_RECIPE, CREATE_RECIPE, SAVE_RECIPE, DELETE_RECIPE } from "../actionTypes"
+import { GET_SAVED_RECIPE, CREATE_RECIPE, SAVE_RECIPE, DELETE_RECIPE, EDIT_RECIPE } from "../actionTypes"
 
 const getRecipe = (savedRecipe) => {
     return{
@@ -25,6 +25,13 @@ const deleteOwnRecipe = (id) => {
     return{
         type: DELETE_RECIPE,
         id
+    }
+}
+
+const editRecipe = (fixRecipe) => {
+    return{
+        type: EDIT_RECIPE,
+        fixRecipe
     }
 }
 
@@ -86,5 +93,25 @@ export const deleteRecipe = (id, navigate) =>{
         })
         .then(r=> dispatch(deleteOwnRecipe(id)),navigate("/recipes/list") )
             
+    }
+}
+
+export const editTheRecipe = (recipe, navigate) =>{
+    return dispatch => {
+        fetch(`http://localhost:3000/recipes/${recipe.id}`, {
+            "method": "POST",
+            "headers": {
+                'Content-Type': "application/json",
+                'Accept': "application/json"
+            },
+            body: JSON.stringify(recipe)
+        })
+        .then(r=>{
+            if(r.ok){
+                r.json().then(fixRecipe => dispatch(absorbRecipe(fixRecipe)),  navigate("/recipes/list"))
+            }else{
+                r.json().then(err => console.error(err))
+            }
+        })
     }
 }
