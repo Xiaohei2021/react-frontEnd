@@ -54,7 +54,7 @@ export default function SurpriseContainer() {
  
 
   useEffect( ()=> {
-    dispatch( fetchSurprise() )}, [])
+    dispatch( fetchSurprise())}, [])
 
   // debugger
   // console.log(surpriseDB)
@@ -66,7 +66,7 @@ export default function SurpriseContainer() {
 
 
       <nav style={{
-            borderBottom: "solid 1px",
+            // borderBottom: "solid 1px",
             paddingBottom: "1rem",
           }}>
             <Link to="list">Surprise Me!</Link>

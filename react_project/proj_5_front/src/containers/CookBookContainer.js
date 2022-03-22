@@ -40,18 +40,23 @@ import { fetchSavedRecipe }from "../actions/recipeActions/recipe"
 //   }
 // }
 
+// const recipeDB = useSelector(state => state.db.ownRecipe)
+// function mapStateToProps(state){
+//   return{
+//     savedRecipe: state.db.ownRecipe
+//   }
+// }
+
+// const dispatch = useDispatch();
+// dispatch( fetchSavedRecipe() )
+
 // function mapDispatchToProps(dispatch) {
 //   return {
 //     fetchdata: () => dispatch(fetchSavedRecipe()),
 //   }
 // }
 
-// function mapStateToProps(state){
-//   // console.log(state)
-//   return{
-//     savedRecipe: state.db.ownRecipe
-//   }
-// }
+
 
 // export default connect(mapStateToProps, mapDispatchToProps)(CookBookContainer)}
 
@@ -81,3 +86,6 @@ import { fetchSavedRecipe }from "../actions/recipeActions/recipe"
   }
 // export default connect(mapStateToProps, mapDispatchToProps)(CookBookContainer)
 export default CookBookContainer
+
+
+

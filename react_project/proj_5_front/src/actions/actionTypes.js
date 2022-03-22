@@ -6,5 +6,4 @@ export const GET_SAVED_RECIPE = "GET_SAVED_RECIPE"
 export const CREATE_RECIPE = "CREATE_RECIPE"
 export const DELETE_RECIPE = "DELETE_RECIPE"
 
-export const CREATE_NOTE = "CREATE_NOTE"
-export const DELETE_NOTE = "DELETE_NOTE"
+export const EDIT_RECIPE = "EDIT_RECIPE"
