@@ -1,14 +1,13 @@
 import React from 'react'
 import {useState, useEffect} from "react";
 import { useDispatch } from 'react-redux';
-import { useNavigate } from "react-router-dom";
-import { useOutletContext, useParams  } from 'react-router-dom'
+import { useOutletContext, useParams, useNavigate  } from 'react-router-dom'
 import { editTheRecipe } from '../../actions/recipeActions/recipe';
 
 
 export default function Edit() {
 
-    const {id} = useParams();
+    const { id } = useParams();
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const recipeDB = useOutletContext();
@@ -18,11 +17,11 @@ export default function Edit() {
     const [ingredient, setIngredient] = useState(recipe.ingredient);
     const [cooking_Instructions, setCooking_Instructions] = useState(recipe.cooking_Instructions);
 
+    // console.log(recipe)
 
-    console.log(recipe)
-
-    function handleEdit(){
-        dispatch(editTheRecipe(), navigate)
+    function handleEdit(e){
+        e.preventDefault();
+        dispatch(editTheRecipe({id: id, name:name, ingredient: ingredient, cooking_Instructions:cooking_Instructions}, navigate) )
     }
 
   return (
@@ -31,14 +30,12 @@ export default function Edit() {
             <input 
                 type="text" 
                 placeholder='Enter the recipe ingredient' 
-                name="name"
                 value={name}
                 onChange={ e => setName(e.target.value)}
             />
             <input 
                 type="text" 
                 placeholder='Enter the recipe ingredient'
-                name="ingredient"
                 value={ingredient}
                 onChange={e=> setIngredient(e.target.value)}
 
@@ -46,7 +43,6 @@ export default function Edit() {
             <input 
                 type="textarea" 
                 placeholder='Enter the recipe instructions'
-                name="cooking_Instructions"
                 value={cooking_Instructions}
                 onChange={e=> setCooking_Instructions(e.target.value)}
             />

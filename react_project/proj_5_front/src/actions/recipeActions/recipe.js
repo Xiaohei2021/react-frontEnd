@@ -28,10 +28,10 @@ const deleteOwnRecipe = (id) => {
     }
 }
 
-const editRecipe = (fixRecipe) => {
+const editRecipe = (modifiedRecipe) => {
     return{
         type: EDIT_RECIPE,
-        fixRecipe
+        modifiedRecipe
     }
 }
 
@@ -108,7 +108,7 @@ export const editTheRecipe = (recipe, navigate) =>{
         })
         .then(r=>{
             if(r.ok){
-                r.json().then(fixRecipe => dispatch(absorbRecipe(fixRecipe)),  navigate("/recipes/list"))
+                r.json().then(modifiedRecipe => dispatch(absorbRecipe(modifiedRecipe)),  navigate("/recipes/list"))
             }else{
                 r.json().then(err => console.error(err))
             }
