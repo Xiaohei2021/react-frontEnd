@@ -38,7 +38,9 @@
 
  .header {
   text-align: center;
- }
+  
+  /* background-image: url(https://thumbs.dreamstime.com/z/food-recipe-background-black-chalkboard-colored-ingredients-such-as-vegetables-bread-spices-46333915.jpg); */
+  }
 
  .nav-bar{
    margin-right: 50px;

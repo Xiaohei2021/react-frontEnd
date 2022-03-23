@@ -99,7 +99,7 @@ export const deleteRecipe = (id, navigate) =>{
 export const editTheRecipe = (recipe, navigate) =>{
     return dispatch => {
         fetch(`http://localhost:3000/recipes/${recipe.id}`, {
-            "method": "POST",
+            "method": "PATCH",
             "headers": {
                 'Content-Type': "application/json",
                 'Accept': "application/json"

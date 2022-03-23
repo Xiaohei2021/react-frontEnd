@@ -16,6 +16,7 @@ import Dish from './components/surprises/Dish';
 import QueryList from './components/query/QueryList';
 import QueryDish from './components/query/QueryDish'
 import QueryInput from './components/query/QueryInput';
+import Edit from './components/recipe/Edit';
 
 function App() {
   
@@ -30,7 +31,7 @@ function App() {
   // }
 
   return (
-    <div className='header'>
+    <div className='header' >
         {/* <Navbar /> */}
 
         <nav style={{
@@ -49,6 +50,7 @@ function App() {
             <Route path={"list"} element={< RecipeList/>} />
             <Route path={"new"} element={< RecipeInput />}/>
             <Route path={":id"} element={<Recipe />} />
+            <Route path={":id/update"} element={<Edit />} />
           </Route>
          
           <Route path="/surprises" element={< SurpriseContainer/>} >

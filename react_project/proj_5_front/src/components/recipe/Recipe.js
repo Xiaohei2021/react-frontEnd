@@ -1,7 +1,7 @@
 import React from 'react'
-import { deleteRecipe } from '../../actions/recipeActions/recipe'
+import { deleteRecipe, editTheRecipe } from '../../actions/recipeActions/recipe'
 // import { connect } from 'react-redux'
-import { useParams } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { useOutletContext  } from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
@@ -32,10 +32,14 @@ import { useNavigate } from "react-router-dom";
 
   // const ingredients = Object.fromEntries(Object.entries(recipe).filter(([key]) => key.includes('strIngredient')))
   const dispatch = useDispatch();
-  // console.log(rec)
+  console.log(rec)
 
   const handleClick = (e) => {
     dispatch(deleteRecipe(parseInt(id), navigate))
+  }
+
+  const handleEdit = (e) => {
+    navigate("update")
   }
 
   // debugger
@@ -48,6 +52,7 @@ import { useNavigate } from "react-router-dom";
       {/* {props.recipe.ingredient}  */}
       {/* {props.recipe.cooking_Instructions} */}
       <button onClick={ e => handleClick(e)}>Delete</button>
+      <button onClick={ e => handleEdit(e)}>Edit Recipe</button>
 
     </div>
   )

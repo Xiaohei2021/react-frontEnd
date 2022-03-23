@@ -1,6 +1,6 @@
 import React from 'react'
 // import { connect } from 'react-redux'
-import { createOwnRecipe } from '../../actions/recipeActions/recipe'
+import { createOwnRecipe, editTheRecipe } from '../../actions/recipeActions/recipe'
 import { useNavigate } from "react-router-dom";
 import {useState} from "react";
 import { useDispatch } from 'react-redux';
@@ -16,19 +16,10 @@ function RecipeInput() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-// class RecipeInput extends Component {
-//     state={
-//         name:"",
-//         ingredient: "",
-//         cooking_Instructions: ""
-//     }
 
-    // function handleChange = (e) => {
-    //     this.setData({[e.target.name]: e.target.value})
-    // }
     const handleSubmit = (e) => {
         e.preventDefault();
-        // dispatch(createOwnRecipe([name, ingredient, cooking_Instructions]))
+        
         dispatch(createOwnRecipe({name:name, ingredient: ingredient, cooking_Instructions:cooking_Instructions}, navigate))
         setName("");
         setIngredient("");
@@ -68,7 +59,7 @@ function RecipeInput() {
                 value={cooking_Instructions}
                 onChange={e=> setCooking_Instructions(e.target.value)}
             />
-            <input type="submit"/>
+            <input type="submit" />
         </form>
           
     </div>

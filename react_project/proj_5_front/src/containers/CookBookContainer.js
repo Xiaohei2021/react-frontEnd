@@ -71,13 +71,13 @@ import { fetchSavedRecipe }from "../actions/recipeActions/recipe"
   // debugger
     return (
       <div>
-          <nav style={{
+          {/* <nav style={{
             // borderBottom: "solid 1px",
             paddingBottom: "1rem",
           }}>
             <Link to="new">Create New Recipe</Link> |{""}
             <Link to="list">See All Recipes</Link> |{""}
-          </nav>
+          </nav> */}
          {/* { recipeDB.map(r => <li key={r.id} recipe={r}>{r.name}</li>)}  */}
           <Outlet context={ recipeDB }/> 
 

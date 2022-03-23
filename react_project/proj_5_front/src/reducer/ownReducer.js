@@ -1,4 +1,4 @@
-import { GET_SAVED_RECIPE, CREATE_RECIPE, SAVE_RECIPE, DELETE_RECIPE } from "../actions/actionTypes";
+import { GET_SAVED_RECIPE, CREATE_RECIPE, SAVE_RECIPE, DELETE_RECIPE, EDIT_RECIPE } from "../actions/actionTypes";
 
 export default function ownReducer(state = {ownRecipe: []}, action){
     let idx;
