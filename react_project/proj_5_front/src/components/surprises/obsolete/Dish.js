@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useOutletContext  } from 'react-router-dom'
-import { saveTheRecipe } from '../../actions/recipeActions/recipe'
+import { saveTheRecipe } from '../../../actions/recipeActions/recipe'
 // 
 // class Dish extends Component {
 

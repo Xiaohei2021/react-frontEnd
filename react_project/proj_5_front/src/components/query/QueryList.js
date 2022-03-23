@@ -1,5 +1,5 @@
 // import React, { Component } from 'react'
-import Dish from '../surprises/Dish'
+// import Dish from '../surprises/obsolete/Dish'
 import { useOutletContext, Link  } from 'react-router-dom'
 
 

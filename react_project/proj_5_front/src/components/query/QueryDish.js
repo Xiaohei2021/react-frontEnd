@@ -17,7 +17,8 @@ export default function QueryDish() {
     const ingredients = Object.fromEntries(Object.entries(result).filter(([key]) => key.includes('strIngredient')))
     const data = Object.keys(ingredients).map(function(key){ return(ingredients[key])})
     const filteredIngredients = data.filter(i => i.length && i!== null).join(",")
-    const handleClick = (e) => {
+    
+    function handleClick(){
       dispatch(saveTheRecipe({name:result.strMeal, ingredient: filteredIngredients, cooking_Instructions:result.strInstructions}, navigate))
     }
 
@@ -28,7 +29,7 @@ export default function QueryDish() {
       <img src={result.strMealThumb} alt={result.strMeal} className="img"/>
       <h3>Ingredient:</h3>{filteredIngredients}
       <p>cooking_Instructions:{result.strInstructions}</p> 
-      <button onClick={ e => handleClick(e)}>Save</button>
+      <button onClick={handleClick}>Save</button>
 
     </div>
   )

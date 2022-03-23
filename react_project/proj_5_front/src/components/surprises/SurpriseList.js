@@ -3,7 +3,7 @@ import React from 'react'
 import { useOutletContext, Link  } from 'react-router-dom'
 
 
-import Dish from './Dish'
+// import Dish from './obsolete/Dish'
 
 // export default class SurpriseList extends Component {
 //   render() {

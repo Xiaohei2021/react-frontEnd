@@ -36,11 +36,11 @@ import { useNavigate } from "react-router-dom";
   const dispatch = useDispatch();
   // console.log(rec)
 
-  const handleClick = (e) => {
+  function handleClick(){
     dispatch(deleteRecipe(parseInt(id), navigate))
   }
 
-  const handleEdit = (e) => {
+  function handleEdit(){
     navigate("update")
   }
 
@@ -53,9 +53,9 @@ import { useNavigate } from "react-router-dom";
       <h1>cooking_Instructions:</h1> {rec.cooking_Instructions}
       {/* {props.recipe.ingredient}  */}
       {/* {props.recipe.cooking_Instructions} */}
-      <button onClick={ e => handleClick(e)}>Delete</button>
-      <button onClick={ e => handleEdit(e)}>Edit Recipe</button>
-
+      <button onClick={ handleClick}>Delete</button>
+      <button onClick={ handleEdit }>Edit Recipe</button>
+      <Outlet context={recipeDB}/>
     </div>
   )
 }

@@ -13,11 +13,12 @@ export default function Edit() {
     const recipeDB = useOutletContext();
     const recipe = recipeDB.find(r => r.id === parseInt(id)) 
     
+    
     const [name, setName] = useState(recipe.name);
     const [ingredient, setIngredient] = useState(recipe.ingredient);
     const [cooking_Instructions, setCooking_Instructions] = useState(recipe.cooking_Instructions);
 
-    // console.log(recipe)
+    console.log(recipe)
 
     function handleEdit(e){
         e.preventDefault();
