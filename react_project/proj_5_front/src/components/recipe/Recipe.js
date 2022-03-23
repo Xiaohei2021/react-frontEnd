@@ -34,7 +34,7 @@ import { useNavigate } from "react-router-dom";
 
   // const ingredients = Object.fromEntries(Object.entries(recipe).filter(([key]) => key.includes('strIngredient')))
   const dispatch = useDispatch();
-  console.log(rec)
+  // console.log(rec)
 
   const handleClick = (e) => {
     dispatch(deleteRecipe(parseInt(id), navigate))
