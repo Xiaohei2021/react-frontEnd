@@ -4,7 +4,7 @@ import React from 'react'
 // import FoodList from '../components/surprises/SurpriseList'
 // import { connect } from 'react-redux'
 import {fetchSurprise } from '../actions/surpriseActions/surprise'
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet, Link, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
 import { useEffect } from 'react'
 
@@ -49,9 +49,14 @@ import { useEffect } from 'react'
 
 
 export default function SurpriseContainer() {
+
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const surpriseDB = useSelector(state => state.surprise.randomRecipes)
  
+  function handleSurprise(){
+    navigate("list")
+  }
 
   useEffect( ()=> {
     dispatch( fetchSurprise())}, [])
@@ -64,15 +69,16 @@ export default function SurpriseContainer() {
 
       {/* {surpriseDB.map(s => {})} */}
 
+    <button onClick={handleSurprise}>Surprise me!!!</button>
 
-      <nav style={{
-            // borderBottom: "solid 1px",
+      {/* <nav style={{
+            borderBottom: "solid 1px",
             paddingBottom: "1rem",
           }}>
             <Link to="list">Surprise Me!</Link>
-          </nav>
+          </nav> */}
          {/* {/* { recipeDB.map(r => <li key={r.id} recipe={r}>{r.name}</li>)}  */}
-          <Outlet context={ surpriseDB }/>  
+        <Outlet context={ surpriseDB }/>  
     </div>
   )
 }

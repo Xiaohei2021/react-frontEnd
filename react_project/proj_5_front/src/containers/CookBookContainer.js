@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect } from 'react'
-import { Outlet, Link  } from 'react-router-dom';
+import { Outlet, Link, Navigate, useNavigate  } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
 
 // import Recipe from '../components/recipe/Recipe'
@@ -63,11 +63,21 @@ import { fetchSavedRecipe }from "../actions/recipeActions/recipe"
  function CookBookContainer(){
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const recipeDB = useSelector(state => state.db.ownRecipe)
  
 
   useEffect( ()=> {
     dispatch( fetchSavedRecipe() )}, [])
+
+  function handleCreate(){
+    navigate("new")
+  }
+
+  function handleRecipes(){
+    navigate("list")
+  }
+
   // debugger
     return (
       <div>
@@ -79,6 +89,13 @@ import { fetchSavedRecipe }from "../actions/recipeActions/recipe"
             <Link to="list">See All Recipes</Link> |{""}
           </nav> */}
          {/* { recipeDB.map(r => <li key={r.id} recipe={r}>{r.name}</li>)}  */}
+
+         <button onClick={handleCreate}>
+          Create New Recipe
+         </button>
+         <button onClick={handleRecipes}>
+          See All Recipe
+         </button>
           <Outlet context={ recipeDB }/> 
 
 
