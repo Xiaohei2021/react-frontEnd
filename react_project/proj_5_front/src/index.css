@@ -5,7 +5,7 @@ body {
     sans-serif;
   background-image: url(https://cdn.edu.buncee.com/rackspace/bnc-assets/backgrounds/55e/689/1441032351_Young_background_education083115_03.jpg);
   background-repeat:no-repeat; 
-  background-size: "fit";
+  background-size: cover;
 
 
 }

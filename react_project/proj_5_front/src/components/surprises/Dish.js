@@ -66,9 +66,8 @@ function Dish() {
       <h4>Name: {surprise.strMeal}</h4> 
       <img src={surprise.strMealThumb} alt={surprise.strMeal} className="img"/>
       <h3>Ingredient:</h3>{filteredIngredients}
-      <p>cooking_Instructions:{surprise.strInstructions}</p> 
+      <h3>cooking_Instructions:</h3> {surprise.strInstructions}
       <button onClick={ e => handleClick(e)}>Save</button>
-
     </div>
   )
 }

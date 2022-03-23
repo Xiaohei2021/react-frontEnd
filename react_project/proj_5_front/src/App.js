@@ -1,4 +1,4 @@
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, NavLink } from 'react-router-dom';
 // import { useNavigate, useParams  } from "react-router-dom";
 // import Error from './components/Error';
 // import Navbar from './Navbar';
@@ -34,7 +34,7 @@ function App() {
     <div className='header' >
         {/* <Navbar /> */}
 
-        <nav style={{
+        {/* <nav style={{
             borderBottom: "solid 1px",
             paddingBottom: "1rem",
           }}>
@@ -42,7 +42,33 @@ function App() {
             <Link to="/recipes">Sections of Known Recipe </Link> |{""}
             <Link to="/surprises">Section of random inspiration</Link> |{""}
             <Link to="/query">Section of specific inquery </Link> |{""}
-          </nav>
+          </nav> */}
+
+            <NavLink 
+              to="/home"  
+              style={({ isActive }) => ({
+                color: isActive ? '#fff' : '#545e6f',
+                background: isActive ? '#00dc76' : '#f0f0f0',
+               })}>Home</NavLink> |{""}
+
+            <NavLink 
+              to="/recipes"
+              style={({ isActive }) => ({
+                color: isActive ? '#fff' : '#545e6f',
+                background: isActive ? '#00dc76' : '#f0f0f0',
+               })}>Sections of Known Recipe </NavLink> |{""}
+            <NavLink 
+              to="/surprises"
+              style={({ isActive }) => ({
+                color: isActive ? '#fff' : '#545e6f',
+                background: isActive ? '#00dc76' : '#f0f0f0',
+               })}>Section of random inspiration</NavLink> |{""}
+            <NavLink 
+              to="/query"style={({ isActive }) => ({
+                color: isActive ? '#fff' : '#545e6f',
+                background: isActive ? '#00dc76' : '#f0f0f0',
+               })}>Section of specific inquery </NavLink> |{""}
+
 
         <Routes>
           <Route path="/home" element={< Home/>} />
@@ -50,7 +76,7 @@ function App() {
             <Route path={"list"} element={< RecipeList/>} />
             <Route path={"new"} element={< RecipeInput />}/>
             <Route path={":id"} element={<Recipe />} />
-            <Route path={":id/update"} element={<Edit />} />
+            <Route path={"update"} element={<Edit />} />
           </Route>
          
           <Route path="/surprises" element={< SurpriseContainer/>} >

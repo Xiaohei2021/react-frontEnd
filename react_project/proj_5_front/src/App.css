@@ -48,16 +48,16 @@
  .card {
   text-align: center;
   border: grey solid 1px;
-  padding: 1rem;
-  width: 50 rem;
-  height: 125 rem;
+  padding: 1 rem;
+  width: 30 rem;
+  height: 150 rem;
   display: inline-grid;
-  margin: 1rem 2rem;
+  margin: 1 rem 2 rem;
   box-shadow: 3px 4px #e04b52
 }
 
 .img{
   justify-self: center;
-  height: 10 rem;
+  height: 20 rem;
   width: 30 rem ;
 }
