@@ -44,20 +44,23 @@
  .nav-bar{
    margin-right: 50px;
  }
+.grid{
+  grid-auto-columns: 1fr;
+}
 
- .card {
+ .column-2 {
   text-align: center;
   border: grey solid 1px;
-  padding: 1 rem;
-  width: 30 rem;
-  height: 150 rem;
+  padding: 1rem;
+  width: 50rem;
+  height: 80rem;
   display: inline-grid;
-  margin: 1 rem 2 rem;
+  margin: 1rem 2rem;
   box-shadow: 3px 4px #e04b52
 }
 
-.img{
+.column-1{
   justify-self: center;
-  height: 20 rem;
-  width: 30 rem ;
+  height: 20rem;
+  width: 30rem ;
 }

@@ -108,7 +108,7 @@ export const editTheRecipe = (recipe, navigate) =>{
         })
         .then(r=>{
             if(r.ok){
-                r.json().then(modifiedRecipe => dispatch(absorbRecipe(modifiedRecipe)),  navigate("/recipes/list"))
+                r.json().then(modifiedRecipe => dispatch(editRecipe(modifiedRecipe)),  navigate("/recipes/list"))
             }else{
                 r.json().then(err => console.error(err))
             }

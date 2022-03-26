@@ -1,5 +1,5 @@
 import React from 'react'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Outlet, useNavigate  } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
 
@@ -65,6 +65,9 @@ import { fetchSavedRecipe }from "../actions/recipeActions/recipe"
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const recipeDB = useSelector(state => state.db.ownRecipe)
+
+  // const [state, setState] = useState(recipeDB);
+
  
 
   useEffect( ()=> {
@@ -77,6 +80,7 @@ import { fetchSavedRecipe }from "../actions/recipeActions/recipe"
   function handleRecipes(){
     navigate("list")
   }
+  console.log(recipeDB)
 
   // debugger
     return (

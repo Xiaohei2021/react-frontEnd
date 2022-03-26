@@ -18,7 +18,7 @@ export default function Edit() {
     const [ingredient, setIngredient] = useState(recipe.ingredient);
     const [cooking_Instructions, setCooking_Instructions] = useState(recipe.cooking_Instructions);
 
-    console.log(recipe)
+    // console.log(recipe)
 
     function handleEdit(e){
         e.preventDefault();

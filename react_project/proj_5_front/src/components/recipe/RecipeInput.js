@@ -9,13 +9,11 @@ import { useDispatch } from 'react-redux';
 
 function RecipeInput() {
 
-    // const [(1), (2)] = useState(3)
     const [name, setName] = useState("");
     const [ingredient, setIngredient] = useState("");
     const [cooking_Instructions, setCooking_Instructions] = useState("");
     const dispatch = useDispatch();
     const navigate = useNavigate();
-
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -24,11 +22,6 @@ function RecipeInput() {
         setName("");
         setIngredient("");
         setCooking_Instructions("");
-        // this.setState({ 
-        //     name:"",
-        //     ingredient: "",
-        //     cooking_Instructions: ""
-        // })
     }
 
     return (
@@ -40,9 +33,7 @@ function RecipeInput() {
                 placeholder='Enter the recipe ingredient' 
                 name="name"
                 value={name}
-                // value={this.state.name}
                 onChange={ e => setName(e.target.value)}
-                // onchange={ (e) => this.setState({query: e.target.value} }
             />
             <input 
                 type="text" 
@@ -50,7 +41,6 @@ function RecipeInput() {
                 name="ingredient"
                 value={ingredient}
                 onChange={e=> setIngredient(e.target.value)}
-
             />
             <input 
                 type="textarea" 
@@ -66,6 +56,4 @@ function RecipeInput() {
     )
   }
 
-
-// export default connect(null, { createOwnRecipe })(RecipeInput)
 export default RecipeInput

@@ -46,17 +46,20 @@ import { useNavigate } from "react-router-dom";
 
   // debugger
   return (
-    <div className='card'>
-      <h1>Recipe#:</h1>{id}
-      <h1>Name:</h1> {rec.name} 
-      <h1>Ingredient:</h1>{rec.ingredient}
-      <h1>cooking_Instructions:</h1> {rec.cooking_Instructions}
-      {/* {props.recipe.ingredient}  */}
-      {/* {props.recipe.cooking_Instructions} */}
-      <button onClick={ handleClick}>Delete</button>
-      <button onClick={ handleEdit }>Edit Recipe</button>
-      <Outlet context={recipeDB}/>
-    </div>
+    
+   
+      <div className='card'>
+        <h1>Recipe#:</h1>{id}
+        <h1>Name:</h1> {rec.name} 
+        <h1>Ingredient:</h1>{rec.ingredient}
+        <h1>cooking_Instructions:</h1> {rec.cooking_Instructions}
+        {/* {props.recipe.ingredient}  */}
+        {/* {props.recipe.cooking_Instructions} */}
+        <button onClick={ handleClick}>Delete</button>
+        <button onClick={ handleEdit }>Edit Recipe</button>
+        <Outlet context={recipeDB}/>
+      </div>
+  
   )
 }
 // export default connect(null, { deleteRecipe })(Recipe)

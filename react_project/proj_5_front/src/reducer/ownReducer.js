@@ -17,19 +17,18 @@ export default function ownReducer(state = {ownRecipe: []}, action){
                 cooking_Instructions: action.cooking_Instructions
             }
             return{...state, ownRecipe:[...state.ownRecipe, action.targetRecipe]}
+
+        case EDIT_RECIPE:    
+            idx = state.ownRecipe.findIndex(recipe => recipe.id === action.id)
+            return {...state, ownRecipe:[...state.ownRecipe.slice(0, idx), action.modifiedRecipe,...state.ownRecipe.slice(idx+1)]}
+
+
     
         case DELETE_RECIPE:
             idx = state.ownRecipe.findIndex(recipe => recipe.id === action.id)
             return{...state,ownRecipe:[...state.ownRecipe.slice(0, idx), ...state.ownRecipe.slice(idx+1)] }
 
-        case EDIT_RECIPE:
-            const modifiedRecipe={
-                name: action.name,
-                ingredient: action.ingredient,
-                cooking_Instructions: action.cooking_Instructions
-            }
-            idx = state.ownRecipe.findIndex(recipe => recipe.id === action.id)
-            return {...state, ownRecipe:[...state.ownRecipe.slice(0, idx), action.modifiedRecipe,...state.ownRecipe.slice(idx+1)]}
+        
 
         default:
             return state;

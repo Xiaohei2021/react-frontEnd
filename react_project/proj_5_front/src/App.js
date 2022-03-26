@@ -20,57 +20,39 @@ import Edit from './components/recipe/Edit';
 
 function App() {
   
-  // let navigate = useNavigate();
-  
-  // function handleCreate(){
-  //   navigate("/recipes/new");
-  // }
 
-  // function handleIndex(){
-  //   navigate("/home")
-  // }
 
   return (
-    <div className='header' >
-        {/* <Navbar /> */}
-
-        {/* <nav style={{
-            borderBottom: "solid 1px",
-            paddingBottom: "1rem",
-          }}>
-            <Link to="/home">Home</Link> |{""}
-            <Link to="/recipes">Sections of Known Recipe </Link> |{""}
-            <Link to="/surprises">Section of random inspiration</Link> |{""}
-            <Link to="/query">Section of specific inquery </Link> |{""}
-          </nav> */}
-
-            <NavLink 
-              to="/home"  
-              style={({ isActive }) => ({
-                color: isActive ? '#fff' : '#545e6f',
-                background: isActive ? '#00dc76' : '#f0f0f0',
-               })}>Home</NavLink> |{""}
-
-            <NavLink 
-              to="/recipes"
-              style={({ isActive }) => ({
-                color: isActive ? '#fff' : '#545e6f',
-                background: isActive ? '#00dc76' : '#f0f0f0',
-               })}>Sections of Known Recipe </NavLink> |{""}
-            <NavLink 
-              to="/surprises"
-              style={({ isActive }) => ({
-                color: isActive ? '#fff' : '#545e6f',
-                background: isActive ? '#00dc76' : '#f0f0f0',
-               })}>Section of random inspiration</NavLink> |{""}
-            <NavLink 
-              to="/query"style={({ isActive }) => ({
-                color: isActive ? '#fff' : '#545e6f',
-                background: isActive ? '#00dc76' : '#f0f0f0',
-               })}>Section of specific inquery </NavLink> |{""}
-
+    <div>
+      <div >
+      <NavLink 
+        to="/home"  
+        style={({ isActive }) => ({
+          color: isActive ? '#fff' : '#545e6f',
+          background: isActive ? '#00dc76' : '#f0f0f0',
+          })}>Home</NavLink> |{""}
+      <NavLink 
+        to="/recipes"
+        style={({ isActive }) => ({
+          color: isActive ? '#fff' : '#545e6f',
+          background: isActive ? '#00dc76' : '#f0f0f0',
+          })}>Sections of Known Recipe </NavLink> |{""}
+      <NavLink 
+        to="/surprises"
+        style={({ isActive }) => ({
+          color: isActive ? '#fff' : '#545e6f',
+          background: isActive ? '#00dc76' : '#f0f0f0',
+          })}>Section of random inspiration</NavLink> |{""}
+      <NavLink 
+        to="/query"style={({ isActive }) => ({
+          color: isActive ? '#fff' : '#545e6f',
+          background: isActive ? '#00dc76' : '#f0f0f0',
+          })}>Section of specific inquery </NavLink> |{""}
+      </div>
+            
 
         <Routes>
+  
           <Route path="/home" element={< Home/>} />
 
           <Route path="/recipes" element={< CookBookContainer />} >
@@ -79,7 +61,7 @@ function App() {
             <Route path={":id"} element={<Recipe />} />
             <Route path={":id/update"} element={<Edit />} />
           </Route>
-         
+  
           <Route path="/surprises" element={< SurpriseContainer/>} >
             <Route path={"list"} element={< SurpriseList/>} />
             <Route path={":id"} element={<SurpriseDish />} /> 
@@ -93,10 +75,6 @@ function App() {
 
         </Routes> 
   
-      {/* <h1>What is your tummy yearning for on this fine day?</h1> 
-
-      <button onClick={handleIndex}>CookBook Index </button><br/><br/> 
-      <button onClick={handleCreate}>Create Own Recipe </button><br/><br/> */}
     </div> 
   );
 }
