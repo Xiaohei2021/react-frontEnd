@@ -1,22 +1,22 @@
 import React from 'react'
-// import { useEffect } from 'react'
-// import { useSelector, useDispatch } from 'react-redux'
+import { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import { useOutletContext, Link  } from 'react-router-dom'
 // import { useNavigate } from "react-router-dom";
-// import { fetchSavedRecipe } from '../../actions/recipeActions/recipe'
+import { fetchSavedRecipe } from '../../actions/recipeActions/recipe'
 // import Recipe from './Recipe'
 
 
 function RecipeList () {
 
-  // const dispatch = useDispatch();
-  // const savedRecipe = useSelector(state => state.db.ownRecipe)
+  const dispatch = useDispatch();
+  const recipeDB = useSelector(state => state.db.ownRecipe)
   // const navigate = useNavigate();
-  const recipeDB = useOutletContext();
+  // const recipeDB = useOutletContext();
 
-  // useEffect(()=> {
-  //   dispatch(fetchSavedRecipe())
-  // }, [])
+  useEffect(()=> {
+    dispatch(fetchSavedRecipe())
+  }, [])
   // console.log(savedRecipe)
 
   // const allRecipes = savedRecipe.map(r => <Recipe key={r.id} recipe={r}/> )
