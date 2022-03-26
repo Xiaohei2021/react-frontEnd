@@ -4,7 +4,7 @@ import React from 'react'
 // import FoodList from '../components/surprises/SurpriseList'
 // import { connect } from 'react-redux'
 import {fetchSurprise } from '../actions/surpriseActions/surprise'
-import { Outlet, Link, useNavigate } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
 import { useEffect } from 'react'
 

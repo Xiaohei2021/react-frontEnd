@@ -4,8 +4,8 @@
 // import QueryList from '../components/query/QueryList'
 import { fetchRecipe } from '../actions/queryActions/query'
 import { useSelector, useDispatch } from 'react-redux'
-import { Outlet, Link } from 'react-router-dom';
-import { useEffect } from 'react'
+import { Outlet } from 'react-router-dom';
+// import { useEffect } from 'react'
 import React from 'react'
 import { useNavigate } from "react-router-dom";
 

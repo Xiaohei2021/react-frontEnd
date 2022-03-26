@@ -91,7 +91,7 @@ export const deleteRecipe = (id, navigate) =>{
         fetch(`http://localhost:3000/recipes/${id}`, {
             method: "DELETE"
         })
-        .then(r=> dispatch(deleteOwnRecipe(id)),navigate("/recipes/list") )
+        .then(r => dispatch(deleteOwnRecipe(id)),navigate("/recipes/list") )
             
     }
 }

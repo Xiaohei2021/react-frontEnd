@@ -1,5 +1,5 @@
 import React from 'react'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { Outlet, useNavigate  } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
 
@@ -68,8 +68,6 @@ import { fetchSavedRecipe }from "../actions/recipeActions/recipe"
 
   // const [state, setState] = useState(recipeDB);
 
- 
-
   useEffect( ()=> {
     dispatch( fetchSavedRecipe() )}, [])
 
@@ -80,7 +78,7 @@ import { fetchSavedRecipe }from "../actions/recipeActions/recipe"
   function handleRecipes(){
     navigate("list")
   }
-  console.log(recipeDB)
+  // console.log(recipeDB)
 
   // debugger
     return (
@@ -101,7 +99,6 @@ import { fetchSavedRecipe }from "../actions/recipeActions/recipe"
           See All Recipe
          </button>
           <Outlet context={ recipeDB }/> 
-
 
       </div>)
   }

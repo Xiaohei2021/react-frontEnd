@@ -1,5 +1,5 @@
 import React from 'react'
-import {useState, useEffect} from "react";
+import {useState} from "react";
 import { useDispatch } from 'react-redux';
 import { useOutletContext, useParams, useNavigate  } from 'react-router-dom'
 import { editTheRecipe } from '../../actions/recipeActions/recipe';
@@ -17,8 +17,8 @@ export default function Edit() {
     const [name, setName] = useState(recipe.name);
     const [ingredient, setIngredient] = useState(recipe.ingredient);
     const [cooking_Instructions, setCooking_Instructions] = useState(recipe.cooking_Instructions);
-
-    // console.log(recipe)
+    const editedRecipe = {id: id, name:name, ingredient: ingredient, cooking_Instructions:cooking_Instructions}
+    console.log(editedRecipe)
 
     function handleEdit(e){
         e.preventDefault();
@@ -39,7 +39,6 @@ export default function Edit() {
                 placeholder='Enter the recipe ingredient'
                 value={ingredient}
                 onChange={e=> setIngredient(e.target.value)}
-
             />
             <input 
                 type="textarea" 
@@ -49,7 +48,6 @@ export default function Edit() {
             />
             <input type="submit" />
         </form>
-
     </div>
   )
 }
