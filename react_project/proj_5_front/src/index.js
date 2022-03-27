@@ -29,7 +29,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter >
-        <div className='header'><h1> Leon's Cook Book </h1></div> 
+        {/* <div className='header'><h1> Leon's Cook Book </h1></div>  */}
           <App />
       </BrowserRouter >
     </Provider>
