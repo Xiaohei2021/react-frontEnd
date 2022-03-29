@@ -3,7 +3,7 @@ import { Routes, Route, NavLink } from 'react-router-dom';
 // import Error from './components/Error';
 // import Navbar from './Navbar';
 
-import "./App.css"
+import "./css/App.css"
 import Home from './components/Home';
 import Recipe from './components/recipe/Recipe'
 import RecipeInput from './components/recipe/RecipeInput';
@@ -20,36 +20,31 @@ import Edit from './components/recipe/Edit';
 
 function App() {
   
-
-
-  return (
-  <div className='bookCover'>
-    <h1 >Leon's CookBook</h1>
-
+  // return (
+  // <div className='bookCover'>
+  //   <h1 >Leon's CookBook</h1>
+    {/* <div>
     <div className='cover'>
       <div className='book'>
-        <label for="page-1"  className="book__page book__page--1">
-        </label>
+        <label for="page-1"  className="book__page book__page--1"> </label>
 
-    <label for="page-2" className="book__page book__page--4">
-      <div className="page__content">
+        <label for="page-2" className="book__page book__page--4">
+          <div className="page__content">
 
-        <h1 className="page__content-title">I</h1>
-        <div className="page__content-blockquote">
-          {/* <p className="page__content-blockquote-text">HARI SELDON — . . . born in the 11,988th year of the Galactic Era; died 12,069. The dates are more commonly given in terms of the current Foundational Era as -79 to the year 1 F.E. Born to middle-class parents on Helicon, Arcturus sector (where his father, in a legend of doubtful authenticity, was a tobacco grower in the hydroponic plants of the planet), he early showed amazing ability in mathematics. Anecdotes concerning his ability are innumerable, and some are contradictory. At the age of two, he is said to have. . . </p>
-          <p className="page__content-blockquote-text">. . . Undoubtedly his greatest contributions were in the field of psychohistory. Seldon found the field little more than a set of vague axioms; he left it a profound statistical science. . . . </p>
-          <p className="page__content-blockquote-text">. . . The best existing authority we have for the details of his life is the biography written by Gaal Dornick who, as a young man, met Seldon two years before the great mathematician's death. The story of the meeting . . .</p>
-          <span className="page__content-blockquote-reference">Encyclopedia Galactica*</span> */}
-        </div>
-
-        {/* <div className="page__content-text">
-          <p>His name was Gaal Dornick and he was just a country boy who had never seen Trantor before. That is, not in real life. He had seen it many times on the hyper-video, and occasionally in tremendous three-dimensional newscasts covering an Imperial Coronation or the opening of a Galactic Council. Even though he had lived all his life on the world of Synnax, which circled a star at the edges of the Blue Drift, he was not cut off from civilization, you see. At that time, no place in the Galaxy was. </p>
-          <p>There were nearly twenty-five million inhabited planets in the Galaxy then, and not one but owed allegiance to the Empire whose seat was on Trantor. It was the last half-century in which that could be said. </p>
-        </div> */}
-
-         <div className="page__number">3</div>
-      </div>
-    </label>
+            <h1 className="page__content-title">I</h1>
+            <div className="page__content-blockquote">
+              <p className="page__content-blockquote-text">HARI SELDON — . . . born in the 11,988th year of the Galactic Era; died 12,069. The dates are more commonly given in terms of the current Foundational Era as -79 to the year 1 F.E. Born to middle-class parents on Helicon, Arcturus sector (where his father, in a legend of doubtful authenticity, was a tobacco grower in the hydroponic plants of the planet), he early showed amazing ability in mathematics. Anecdotes concerning his ability are innumerable, and some are contradictory. At the age of two, he is said to have. . . </p>
+              <p className="page__content-blockquote-text">. . . Undoubtedly his greatest contributions were in the field of psychohistory. Seldon found the field little more than a set of vague axioms; he left it a profound statistical science. . . . </p>
+              <p className="page__content-blockquote-text">. . . The best existing authority we have for the details of his life is the biography written by Gaal Dornick who, as a young man, met Seldon two years before the great mathematician's death. The story of the meeting . . .</p>
+              <span className="page__content-blockquote-reference">Encyclopedia Galactica*</span>
+            </div>
+            <div className="page__content-text">
+              <p>His name was Gaal Dornick and he was just a country boy who had never seen Trantor before. That is, not in real life. He had seen it many times on the hyper-video, and occasionally in tremendous three-dimensional newscasts covering an Imperial Coronation or the opening of a Galactic Council. Even though he had lived all his life on the world of Synnax, which circled a star at the edges of the Blue Drift, he was not cut off from civilization, you see. At that time, no place in the Galaxy was. </p>
+              <p>There were nearly twenty-five million inhabited planets in the Galaxy then, and not one but owed allegiance to the Empire whose seat was on Trantor. It was the last half-century in which that could be said. </p>
+            </div>
+            <div className="page__number">3</div>
+          </div>
+      </label>
     
     <input type="radio" name="page" id="page-1"/>
     <input type="radio" name="page" id="page-2"/>
@@ -114,32 +109,37 @@ function App() {
         </div>
       </label>
 
-        {/* <div >
-        <NavLink 
-          to="/home"  
-          style={({ isActive }) => ({
-            color: isActive ? '#fff' : '#545e6f',
-            background: isActive ? '#00dc76' : '#f0f0f0',
-            })}>Home</NavLink> |{""}
-        <NavLink 
-          to="/recipes"
-          style={({ isActive }) => ({
-            color: isActive ? '#fff' : '#545e6f',
-            background: isActive ? '#00dc76' : '#f0f0f0',
-            })}>Section of Known Recipe </NavLink> |{""}
-        <NavLink 
-          to="/surprises"
-          style={({ isActive }) => ({
-            color: isActive ? '#fff' : '#545e6f',
-            background: isActive ? '#00dc76' : '#f0f0f0',
-            })}>Section of random inspiration</NavLink> |{""}
-        <NavLink 
-          to="/query"style={({ isActive }) => ({
-            color: isActive ? '#fff' : '#545e6f',
-            background: isActive ? '#00dc76' : '#f0f0f0',
-            })}>Section of specific inquery </NavLink> |{""}
-        </div> */}
-
+      </div>
+    </div>
+    </div> */}
+return (
+  <div className='bookCover'>
+        <h1 >Leon's CookBook</h1>
+        <div >
+          <NavLink 
+            to="/home"  
+            style={({ isActive }) => ({
+              color: isActive ? '#fff' : '#545e6f',
+              background: isActive ? '#00dc76' : '#f0f0f0',
+              })}>Home</NavLink> |{""}
+          <NavLink 
+            to="/recipes"
+            style={({ isActive }) => ({
+              color: isActive ? '#fff' : '#545e6f',
+              background: isActive ? '#00dc76' : '#f0f0f0',
+              })}>Section of Known Recipe </NavLink> |{""}
+          <NavLink 
+            to="/surprises"
+            style={({ isActive }) => ({
+              color: isActive ? '#fff' : '#545e6f',
+              background: isActive ? '#00dc76' : '#f0f0f0',
+              })}>Section of random inspiration</NavLink> |{""}
+          <NavLink 
+            to="/query"style={({ isActive }) => ({
+              color: isActive ? '#fff' : '#545e6f',
+              background: isActive ? '#00dc76' : '#f0f0f0',
+              })}>Section of specific inquery </NavLink> |{""}
+        </div>
         <Routes>
 
           <Route path="/home" element={< Home/>} />
@@ -163,8 +163,6 @@ function App() {
           </Route> 
 
         </Routes> 
-      </div>
-    </div> 
   </div> 
   );
 }

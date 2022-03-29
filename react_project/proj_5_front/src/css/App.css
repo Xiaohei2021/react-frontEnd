@@ -1,8 +1,4 @@
 
- /* .header {
-  text-align: center;
-  
-  }
 
  .nav-bar{
    margin-right: 50px;
@@ -26,20 +22,30 @@
   justify-self: center;
   height: 20rem;
   width: 30rem ;
-} */
+} 
+
+
+.bookCover{
+  /* width: calc(var(--baseline) * 33);
+  height: calc(var(--baseline) * 45);
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.3); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; */
+  align-items: center;
+  text-align: center;
+  /* background-image: url(https://static.vecteezy.com/system/resources/previews/000/263/031/large_2x/chef-cook-holding-parchment-menu-vector.jpg); */
+  /* background-image: url(https://pixy.org/src2/576/5760663.png); */
+}
 
 
 
-@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,600|Tulpen+One&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,600|Tulpen+One&display=swap');
 :root {
-  /* colors */
   --body-bg: #fafafa;
   --page-bg: #f5f5f5;
   --dark-text: #2a2935;
-  /* spacing */
-  /* this is what defines the global scale */
   --baseline: 20px;
-  /* fonts */
   --book-title: 'Tulpen One', sans-serif;
   --title: 'Cormorant Garamond', serif;
   --body: 'Cormorant Garamond', serif;
@@ -60,10 +66,10 @@ body {
   width: calc(var(--baseline) * 65);
   height: calc(var(--baseline) * 45);
   box-shadow: 0 0 100px rgba(0, 0, 0, 0.3);
-}
+} */
 
 
-.book {
+/* .book {
   width: 100%;
   height: 100%;
   display: flex;
@@ -86,13 +92,13 @@ body {
 .book__page--1 {
   cursor: pointer;
   overflow: hidden;
-}
+} */
 /* .book__page--1 img {
   width: 100%;
   max-width: 100%;
   height: auto;
 } */
-.book__page--2 {
+/* .book__page--2 {
   position: absolute;
   right: 0;
   pointer-events: none;
@@ -219,4 +225,4 @@ body {
 .book input[type="radio"]:checked + .book__page {
   transition: transform 0.9s cubic-bezier(0.645, 0.045, 0.355, 1);
   transform: rotateY(-180deg);
-}
+} */
