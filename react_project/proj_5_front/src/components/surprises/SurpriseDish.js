@@ -27,12 +27,15 @@ function Dish() {
     // console.log(data)
     return (
       <div className='card'>
+        <div className='img'>
+        <img src={surprise.strMealThumb} alt={surprise.strMeal} />
         <h5>Recipe#: {id}</h5>
         <h4>Name: {surprise.strMeal}</h4> 
-        <img src={surprise.strMealThumb} alt={surprise.strMeal} className="img"/>
         <h3>Ingredient:</h3>{filteredIngredients}
-        <h3>cooking_Instructions:</h3> {surprise.strInstructions}
+        <h3>cooking_Instructions:</h3> {surprise.strInstructions}<br/>
         <button onClick={ e => handleClick(e)}>Save</button>
+        </div>
+        
       </div>
     )
   }

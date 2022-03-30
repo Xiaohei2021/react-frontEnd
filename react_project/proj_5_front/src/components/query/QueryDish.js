@@ -23,17 +23,13 @@ export default function QueryDish() {
     }
 
   return (
-    <div className='grid'>
-
-      <div className='column-1'>
-        <img src={result.strMealThumb} alt={result.strMeal} className="img"/>
-      </div>
-      
-      <div className='columm-2'>
+    <div className='card'>
+      <div className='img'>
+        <img src={result.strMealThumb} alt={result.strMeal} />
         <h5>Recipe#: {id}</h5>
         <h4>Name: {result.strMeal}</h4> 
         <h3>Ingredient:</h3>{filteredIngredients}
-        <p>cooking_Instructions:{result.strInstructions}</p> 
+        <h3>cooking_Instructions:</h3><p>{result.strInstructions}</p><br/> 
         <button onClick={handleClick}>Save</button>
       </div>
     </div>  

@@ -33,9 +33,11 @@ import { useOutletContext, Link  } from 'react-router-dom'
  export default function QueryList() {
    
   const queryDB = useOutletContext();
+   
 
    return (
      <div>
+
       <ol>
         <nav
           style={{
